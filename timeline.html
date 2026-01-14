@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timeline</title>
+
+  <style>
+    :root{
+      --border:#e9e9e9;
+      --text:#111;
+      --muted:#666;
+      --bg:#fff;
+    }
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--text);
+      background:#fafafa;
+    }
+
+    header.app-header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner{
+      width: 100%;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .brand .title{ font-weight:800; font-size:18px; }
+    .brand .subtitle{ font-size:12px; color:var(--muted); margin-top:4px; }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      appearance:none;
+      border:1px solid var(--border);
+      background:#fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      user-select:none;
+      white-space:nowrap;
+      text-decoration:none;
+      color:inherit;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .btn:hover{ background:#f6f6f6; }
+
+    .btn.primary{
+      border-color:#111;
+      background:#111;
+      color:#fff;
+    }
+    .btn.primary:hover{ background:#222; }
+
+    /* ===== Page ===== */
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .page-title{
+      margin: 0 0 6px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .page-subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    /* ===== Timeline ===== */
+    .timeline{
+      position: relative;
+      margin-top: 18px;
+      padding-left: 22px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left: 8px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .item{
+      position: relative;
+      padding: 14px 14px 14px 18px;
+      margin: 0 0 14px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .dot{
+      position:absolute;
+      left: -2px;
+      top: 18px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background:#111;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--border);
+    }
+
+    .period{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .role{
+      margin: 6px 0 4px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .company{
+      margin: 0 0 10px;
+      color: #333;
+      font-weight: 600;
+    }
+    .desc{
+      margin: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    ul.bullets{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color:#333;
+      line-height: 1.7;
+    }
+
+    @media (max-width:520px){
+      .brand .subtitle{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="title">Portfolio</div>
+        <div class="subtitle">Data Analyst</div>
+      </div>
+
+      <nav class="header-actions" aria-label="Header actions">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn primary" href="timeline.html">Timeline</a>
+        <a class="btn" href="projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Work Timeline</h1>
+    <p class="page-subtitle">สรุปช่วงเวลาการทำงานและบทบาทสำคัญ</p>
+
+    <section class="timeline">
+      <!-- ตัวอย่างรายการ: แก้ช่วงเวลา/ตำแหน่ง/รายละเอียดตามจริง -->
+      <article class="item">
+        <span class="dot"></span>
+        <div class="period">2024 - Present</div>
+        <div class="role">Data Analyst</div>
+        <div class="company">Company A</div>
+        <p class="desc">โฟกัสการวิเคราะห์ข้อมูลและสร้างรายงานสำหรับผู้บริหาร</p>
+        <ul class="bullets">
+          <li>สร้าง Dashboard และ KPI Tracking</li>
+          <li>ออกแบบ SQL/BigQuery สำหรับการดึงข้อมูล</li>
+          <li>ทำ Data Cleaning และสรุป Insight</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <span class="dot"></span>
+        <div class="period">2022 - 2024</div>
+        <div class="role">Business Analyst</div>
+        <div class="company">Company B</div>
+        <p class="desc">เก็บ requirement, วิเคราะห์ process และทำ report ช่วยทีม</p>
+        <ul class="bullets">
+          <li>วิเคราะห์ workflow และปรับปรุง process</li>
+          <li>ทำ report เทียบ performance รายเดือน</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <span class="dot"></span>
+        <div class="period">2020 - 2022</div>
+        <div class="role">Junior Analyst</div>
+        <div class="company">Company C</div>
+        <p class="desc">เริ่มต้นงานด้านข้อมูล: ทำรายงานพื้นฐานและช่วยเตรียม dataset</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
