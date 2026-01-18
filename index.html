@@ -4,169 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <style>
-        :root{
-            --border:#e9e9e9;
-            --text:#111;
-            --muted:#666;
-            --bg:#fff;
-        }
-        body{
-            margin:0;
-            font-family:system-ui, -apple-system, Segoe UI, Raboto, sans-serif;
-            color:var(--text);
-            background:#fafafa;
-        }
-        /* === header === */
-        header.app-header{
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            width: 100%;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-        }
-        /*ปรับเต็มจอ ไม่จำกัดความกว้าง*/
-        .header-inner{
-            width: 100%;
-            padding: 12px 16px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap: 12px;
-            box-sizing: border-box;
-        }
-
-        .brand{
-            display:flex;
-            flex-direction:column;
-            line-height:1.1;
-        }
-        .brand .title{
-            font-weight:800;
-            font-size:18px;
-        }
-        .brand .subtitle{
-            font-size:12px;
-            color:var(--muted);
-            margin-top:4px;
-        }
-        .header-actions{
-            display:flex;
-            align-items:center;
-            gap:8px;
-            flex-wrap:wrap;
-            justify-content:flex-end;
-        }
-        .btn{
-            appearance:none;
-            border:1px solid var(--border);
-            background:#fff;
-            padding: 8px 12px;
-            border-radius: 10px;
-            cursor:pointer;
-            font-weight:600;
-            font-size:14px;
-            transition: transform .05s ease, background .2s ease, border-color .2s ease;
-            user-select:none;
-            white-space:nowrap;
-        }
-        .btn:hover{ background:#f6f6f6; }
-        .btn:active{ transform: translateY(1px); }
-
-        .btn.primary{
-            border-color:#111;
-            background:#111;
-            color:#fff;
-        }
-        .btn.primary:hover{ background:#222; }
-
-        
-        /*=== Hero Section ===*/
-        .divider{
-            height: 2px;
-            background:#111;
-            width: 260px;
-            margin: 10px 0 18px;
-            opacity: .65;
-        }
-        .hero{
-            padding:24px 16px;
-        }
-
-        .hero-layout{
-            max-width: 1000px;
-            margin:0 auto;
-            display: flex;
-            gap: 60px;
-        }
-
-        .hero-inner{
-            flex:1;
-            max-width: 720px; 
-        }
-
-        .hero-media{
-            width: min(450px, 45vw);
-            aspect-ratio: 50/50;
-            max-width: 45vw;
-
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .hero-media img{
-            transform: scale(1.2);
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center right;
-            display: block;
-        }
-
-        .hero small{ color:#666; font-weight:600; }
-        .hero h2{ margin:8px 0 6px; font-size:34px; }
-        .hero h3{ margin:0; font-size:22px; font-weight:700; color:#333; }
-        .hero ul{margin:0 0 14px; padding-left:18px; color:#333; }
-        .hero-actions{ display:flex; gap:10px; margin-top:10px; }
-        .primary{ background:#111; color:#fff; border-color:#111; }
-
-        .styles_text__CPBAz {
-        color: #999;
-        font-size: 1.2rem;
-}
-
-        /* close line download button */
-        a.btn,
-        a.btn:visited,
-        a.btn:hover,
-        a.btn:active{
-            text-decoration: none !important;
-        }
-
-        a.btn{
-            color: inherit;
-        }
-
-        /* === main === */
-         main{
-            padding: 24px 16px;
-        }
-
-        @media (max-width: 990px){
-            .hero-layout{ flex-direction: column; }
-            .hero-media{
-                width: 100%;
-                max-width: 100%;
-                aspect-ratio: 50/50;               
-            }
-        }
-
-        html{
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
     <header class="app-header">
@@ -177,8 +15,8 @@
             </div>
 
             <nav class ="header-actions" aria-label="Header actions">
-                <button class = "btn primary" type = "button"> About Me </button>
-                <button class = "btn" type = "button"> Skills </button>
+                <a class = "btn primary" type = "button"> About Me </a>
+                <a class = "btn" href="#skills"> Skills </a>
                 <button class = "btn" type = "button"> Projects </button>
                 <button class = "btn" type = "button"> Resume </button>
                 <button class = "btn" type = "button"> About </button>
@@ -204,7 +42,7 @@
                 <br>
 
                 <div class="hero-actions">
-                    <a class="btn" href="#timeline">View My Work</ฟ>
+                    <a class="btn" href="#timeline">View My Work</a>
                     <a class="btn primary" href="Resume_Supakorn_2026.pdf" download="Resume_Supakorn.pdf">Download Resume</a>
                 </div>
              </div>
@@ -217,32 +55,166 @@
 
     <section id="timeline" class="timeline-section">
         <div class="timeline-inner">
-            <h2>Work Timeline</h2>
-            <p>ประสบการณ์ทำงาน และผลงานที่ผ่านมา</p>
+            <h2>Work Experience</h2>
+            <p class="muted">ประสบการณ์ทำงาน และผลงานที่ผ่านมา</p>
 
-            <div class="timeline-item">
-                <span class="time">2024 - Present</span>
-                <h3>Data Analyst</h3>
-                <p>Possefy Group Company (OPPO Thailand)</p>
-                <ul>
-                    <li>ออกแบบและพัฒนา Dashboard ด้วย Power BI และ Looker Studio เพื่อให้ผู้บริหารและทีมงานสามารถติดตามยอดขาย วิเคราะห์การเปลี่ยนแปลงของยอดขายในแต่ละช่วงเวลา ตรวจสอบสินค้าสูญหายในช่องทางออนไลน์ และติดตามการดำเนินงานของระบบขนส่งแบบ Real-time ช่วยลดความเสี่ยง เพิ่มความรวดเร็วในการตัดสินใจ และยกระดับประสิทธิภาพการดำเนินงาน</li>
-                    <li>พัฒนา Data Model และ View Query บน Database และ BigQuery เพื่อสร้างชุดข้อมูลที่มีคุณภาพสูงสำหรับการใช้งานของทีม Developer ช่วยลดความซับซ้อนในการดึงข้อมูล เพิ่มความถูกต้องของข้อมูล และเตรียมความพร้อมของ Data Set สำหรับการนำไปต่อยอดสร้าง AI Model และ AI Product</li>
-                    <li>สนับสนุนการใช้งาน Dashboard และ Data Model แก่ผู้ใช้งานภายในองค์กร แก้ไขปัญหาเชิงเทคนิค และรวบรวมข้อเสนอแนะจากผู้ใช้งานและทีมงาน เพื่อนำมาพัฒนาและปรับปรุงระบบให้สามารถใช้งานได้จริง ตอบโจทย์ทางธุรกิจ และเพิ่มประสิทธิภาพในการทำงาน</li>
-                </ul>
-            </div>
+            <div class="timeline">
 
-            <div class="timeline-item">
-                <span class="time">2023 - 2024</span>
-                <h3>Data Analyst</h3>
-                <p>Rama 2 Medical Group (PMG Hospital Rama2)</p>
-            </div>
+                <article class="tl-item">
+                    <div class="tl-dot" aria-hidden="true"></div>
+                    <div class="tl-card">
+                    <div class="tl-time">2024 - Present</div>
+                    <h3 class="tl-title">Data Analyst</h3>
+                    <br>
+                    <div class="tl-company">
+                    <span class="tl-logo"><img src="oppo.png" alt="OPPO"></span>
+                    <span class="tl-company-name">Possefy Group Company (OPPO Thailand)</span>
+                    </div>
+                    <ul>
+                        <br>
+                        <li class="tl-li">ออกแบบและพัฒนา Dashboard ด้วย Power BI และ Looker Studio เพื่อให้ผู้บริหารและทีมงานสามารถติดตามยอดขาย วิเคราะห์การเปลี่ยนแปลงของยอดขายในแต่ละช่วงเวลา ตรวจสอบสินค้าสูญหายในช่องทางออนไลน์ และติดตามการดำเนินงานของระบบขนส่งแบบ Real-time ช่วยลดความเสี่ยง เพิ่มความรวดเร็วในการตัดสินใจ และยกระดับประสิทธิภาพการดำเนินงาน</li> 
+                        <br>
+                        <li>พัฒนา Data Model และ View Query บน Database และ BigQuery เพื่อสร้างชุดข้อมูลที่มีคุณภาพสูงสำหรับการใช้งานของทีม Developer ช่วยลดความซับซ้อนในการดึงข้อมูล เพิ่มความถูกต้องของข้อมูล และเตรียมความพร้อมของ Data Set สำหรับการนำไปต่อยอดสร้าง AI Model และ AI Product</li> 
+                        <br>
+                        <li>สนับสนุนการใช้งาน Dashboard และ Data Model แก่ผู้ใช้งานภายในองค์กร แก้ไขปัญหาเชิงเทคนิค และรวบรวมข้อเสนอแนะจากผู้ใช้งานและทีมงาน เพื่อนำมาพัฒนาและปรับปรุงระบบให้สามารถใช้งานได้จริง ตอบโจทย์ทางธุรกิจ และเพิ่มประสิทธิภาพในการทำงาน</li>
+                    </ul>
+                    </div>
+                </article>
 
+                 <article class="tl-item">
+                    <div class="tl-dot" aria-hidden="true"></div>
+                    <div class="tl-card">
+                    <div class="tl-time">2023 - 2024</div>
+                    <h3 class="tl-title">Data Analyst</h3><br>
+                    <div class="tl-company">
+                        <span class="tl-logo2"><img src="pmg.jpg" alt="PMG"></span>
+                        <span class="tl-company-name">Rama 2 Medical Group (PMG Hospital Rama2)</span>
+                    </div>
 
+                    <ul class="tl-list">
+                        <br>
+                        <li>พัฒนา Dashboard สำหรับวิเคราะห์จำนวนผู้ป่วย OPD และ IPD รายวัน โดยเชื่อมต่อข้อมูลจากระบบโรงพยาบาล เพื่อวิเคราะห์แนวโน้มและสนับสนุนการตัดสินใจเชิงนโยบาย</li>
+                        <br>
+                        <li>พัฒนา Web Application สำหรับบันทึกและติดตามข้อผิดพลาดในการจ่ายยา ช่วยให้ผู้บริหารสามารถรับรู้ปัญหาเชิงระบบ วิเคราะห์สาเหตุ และกำหนดแนวทางปรับปรุงกระบวนการจ่ายยาได้อย่างมีประสิทธิภาพ</li>
+                        <br>
+                        <li>ประสานงานกับผู้ใช้งานและทีมงาน เพื่อรวบรวมความต้องการด้านข้อมูล วิเคราะห์ปัญหา และนำไปออกแบบระบบจัดเก็บข้อมูล รวมถึงพัฒนา Dashboard ให้สอดคล้องกับกระบวนการทำงานจริง</li>
+                    </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item">
+                    <div class="tl-dot" aria-hidden="true"></div>
+                    <div class="tl-card">
+                    <div class="tl-time">2022 - 2023</div>
+                    <h3 class="tl-title">Internal logistics</h3><br>
+                    <div class="tl-company">
+                        <span class="tl-logo3"><img src="n.jpg" alt="PMG"></span>
+                        <span class="tl-company-name">N health (Bangkok Ratchasima Hospital)</span>
+                    </div>
+
+                    <ul class="tl-list">
+                        <br>
+                        <li>ปฏิบัติงานสนับสนุนกระบวนการจัดการและขนส่งยาและเวชภัณฑ์ เพื่อให้สอดคล้องกับขั้นตอนการให้บริการของแผนกเภสัชกรรมและมาตรฐานของโรงพยาบาล</li>
+                        <br>
+                        <li>สร้างระบบรายงานการขนส่งที่ช่วยให้หัวหน้างานสามารถติดตามเวลาในการจัดส่ง วิเคราะห์เวลาเฉลี่ย และปรับปรุงประสิทธิภาพการขนส่งให้เป็นไปตามเป้าหมายด้านเวลา</li>
+                        <br>
+                        <li>ออกแบบและพัฒนาระบบจัดสรรเวลาการทำงานสำหรับหัวหน้างาน เพื่อวิเคราะห์ช่วงเวลาที่มีปริมาณการขนส่งสูง และสนับสนุนการวางแผนจัดกำลังคนให้เหมาะสมกับปริมาณงานอย่างมีประสิทธิภาพ</li>
+                        <br>
+                        <li>บริหารและประสานงานการทำงานของทีมขนส่ง เพื่อเพิ่มประสิทธิภาพในการค้นหาเส้นทางที่รวดเร็ว ลดระยะเวลาในการจัดส่ง จัดสรรงานเป็นทีมอย่างเหมาะสม และรักษาความปลอดภัยของสินค้าที่จัดส่งตลอดกระบวนการ</li>
+                    </ul>
+                    </div>
+                </article>
+
+                  <article class="tl-item">
+                    <div class="tl-dot" aria-hidden="true"></div>
+                    <div class="tl-card">
+                    <div class="tl-time">2021</div>
+                    <h3 class="tl-title">Data Analyst (Intern)</h3><br>
+                    <div class="tl-company">
+                        <span class="tl-logo4"><img src="true.png" alt="PMG"></span>
+                        <span class="tl-company-name">True Corporation Nakhon Ratchasima</span>
+                    </div>
+
+                    <ul class="tl-list">
+                            <br>
+                            <li>พัฒนา Dashboard รายงานสถานะการอนุมัติสัญญาจากผู้รับเหมา สำหรับโครงการติดตั้งเสาสัญญาณของทรู เพื่อแสดงรายการที่ได้รับการอนุมัติและถูกปฏิเสธ พร้อมวิเคราะห์สาเหตุของการปฏิเสธ และนำเสนอข้อมูลแยกตามพื้นที่ภาคตะวันออกเฉียงเหนือ เพื่อสนับสนุนการปรับปรุงกระบวนการดำเนินงาน</li>
+                            <br>
+                            <li>ออกแบบและพัฒนา Web Application สำหรับติดตามสถานะการอนุมัติสัญญา โดยผู้ใช้งานสามารถค้นหาความคืบหน้าผ่านการกรอกหมายเลขสัญญาบนระบบ และผ่าน Line Official Account (Line OA) ในรูปแบบการใช้งานเดียวกับ Web Application เพื่ออำนวยความสะดวกและเพิ่มความรวดเร็วในการตรวจสอบสถานะ</li>
+                    </ul>
+                    </div>
+                </article>
+                </div>
         </div>
     </section>
 
+<section id="skills" class="skills-section">
+  <div class="skills-inner">
+    <h2>Skills</h2>
+    <p class="muted">กดที่ทักษะเพื่อดูรายละเอียด</p>
 
-        
-    
+    <div class="skills-grid" role="list">
+        <li>
+            <button class="skill-pill" type="button" data-skill="sql" data-tip="SQL" aria-label="SQL"><img src="sql.png" alt="SQL">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="powerbi" data-tip="Power Bi" aira-label="power Bi"><img src="powerbi.png" alt="Power Bi">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="looker" data-tip="Looker Studio" aira-label="Looker Studio"><img src="looker.png" alt="Looker Studio">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="bigquery" data-tip="Big Query" aira-label="Big Query"><img src="bigquery.png" alt="Big Query">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="python" data-tip="Python" aira-label="Python"><img src="python.png" alt="Python">
+            </button>
+        </li>
+
+         <li>
+            <button class="skill-pill" type="button" data-skill="excel" data-tip="Excel" aira-label="Excel"><img src="excel.png" alt="Excel">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="datamodel" data-tip="HTML" aira-label="HTML"><img src="htnl.png" alt="HTML">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="dashboard" data-tip="CSS" aira-label="CSS"><img src="css.png" alt="CSS">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="java" data-tip="Javascript" aira-label="CSS"><img src="java.png" alt="Javascript">
+            </button>
+        </li>
+
+    </div>
+
+    <!-- Details panel -->
+    <div class="skill-panel" id="skillPanel" aria-live="polite">
+      <div class="skill-panel-inner">
+        <div class="skill-panel-head">
+          <h3 class="skill-panel-title" id="skillTitle">เลือกทักษะด้านบน</h3>
+          <button class="skill-panel-close" type="button" id="skillClose" aria-label="Close">✕</button>
+        </div>
+        <p class="skill-panel-desc" id="skillDesc">กดปุ่ม skill เพื่อแสดงรายละเอียดตรงนี้</p>
+        <ul class="skill-panel-bullets" id="skillBullets"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="main.js"></script>
 </body>
 </html>
