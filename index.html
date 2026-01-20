@@ -17,7 +17,7 @@
             <nav class ="header-actions" aria-label="Header actions">
                 <a class = "btn primary" type = "button"> About Me </a>
                 <a class = "btn" href="#skills"> Skills </a>
-                <button class = "btn" type = "button"> Projects </button>
+                <a class = "btn" href = "#projects"> Projects </a>
                 <button class = "btn" type = "button"> Resume </button>
                 <button class = "btn" type = "button"> About </button>
             </nav>
@@ -214,7 +214,74 @@
   </div>
 </section>
 
+<!-- project -->
+ <section id="projects" class="skills-section">
+    <div class="skills-inner">
+        <h2>Project</h2>
+        <p class="muted">เลือกหมวดหมู่ แล้วเลื่อนรูปเพื่อดูตัวอย่างผลงาน</p>
+
+        <!-- tab -->
+    <div class="port-tabs" role="tablist" aria-label="Project Categoyies">
+        <button class="port-tab is-active" type="button" data-filter="all" role="tab" aria-selected="true">ทั้งหมด</button>
+        <button class="port-tab" type="button" data-filter="dashboard" role="tab" aria-selected="false">Possefy Group Company (OPPO Thailand)</button>
+        <button class="port-tab" type="button" data-filter="webapp" role="tab" aria-selected="false">Web App</button>
+        <button class="port-tab" type="button" data-filter="data" role="tab" aria-selected="false">Data</button>
+    </div>
+
+        <!-- Slicer -->
+    <div class="port-slider" aria-label="Project Images">
+        <!-- ปุ่ม outside view report เพื่อไม่โดน overflow:hidden ตัด-->
+         <button class="port-nav prev" type="button" aria-label="Previous images">‹</button>
+
+         <div class="port-viewport" tabindex="0" aria-label="Slider viewport">
+            <div class="port-track" id="portTrack"></div>
+         </div>
+
+         <button class="port-nav next" type="button" aria-label="Next image">›</button>
+
+         <div class="port-dots" id="portDots" aria-label="Slicer dots"></div>
+    </div>
+
+<!-- Detail: เปลี่ยนตามสไลด์ -->
+    <div class="port-detail" aria-live="polite">
+      <div class="port-detail-head">
+        <h3 class="port-title" id="slideTitle">—</h3>
+        <span class="port-badge" id="slideBadge">—</span>
+      </div>
+
+      <p class="muted" id="slideDesc">—</p>
+      <ul class="port-bullets" id="slideBullets"></ul>
+
+      <div class="port-tags" id="slideTags"></div>
+      <div class="port-actions" id="slideActions"></div>
+    </div>
+  </div>
+ </section>
+
+
+
+
+<a class="back-to-top" type="button" id="backToTop" aria-label="Back to top">
+    <img src = "up-arrow_3809136.png">
+</a>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" data-close aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+</div>
+
 
 <script src="main.js"></script>
+
+<script src="portfolio.js"></script>
+
+<!--มาใหม่รอเขียนใหม่ พน -->
+<!-- Lightbox -->
+
+
+
 </body>
 </html>

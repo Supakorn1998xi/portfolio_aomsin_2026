@@ -155,3 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeBtn?.addEventListener("click", closePanel);
 });
+
+/* back to top */
+(() => {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+  const toggle = () => {
+    const show = window.scrollY > 300;
+    btn.classList.toggle("is-show", show);
+  };
+
+  window.addEventListener("scroll", toggle, { passive: true});
+  toggle();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavios: "smooth" });
+  });
+})();
