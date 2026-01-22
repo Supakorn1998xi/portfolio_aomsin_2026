@@ -163,13 +163,14 @@
 
         /* ===== Timeline (Full width, rail on left) ===== */
 .timeline{
-  position: static;
+  position: relative;
+  padding-bottom: 50px;
   /*margin-top: 22px;
   padding: 8px 0;*/
 }
 
 .timeline-section{
-  padding: 56px 16px 80px;
+  /*padding: 20px 16px 80px;*/
   position: relative;
   background: #fff;
   border-top: 1px solid var(--border);
@@ -184,12 +185,12 @@
 .timeline::before{
   content:"";
   position:absolute;
-  left: 292px;     /* ระยะจากขอบซ้าย */
-  top: 200px;
+  left: 32px;          /* กลางจุด: 23 + 9 */
+  top: 25px;              /* หรือปรับเป็น top: 20px ก็ได้ */
   bottom: 0;
-  width: 2px;
-  background: #111;
-  opacity: .18;
+  width: 1.5px;
+  background:#111;
+  opacity:.18;
 }
 
 /* item: 2 คอลัมน์ (ซ้าย = rail, ขวา = การ์ดเต็ม) */
@@ -862,15 +863,82 @@
   font-size: 16px;
 }
 
+/* ===== Company/Project selector ===== */
+.cp-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 14px 0 18px;
+}
 
+.cp-col{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px;
+}
 
-/* responsive (มือถือก็เหมือนเดิมอยู่แล้ว) */
-@media (max-width: 820px){
-  .timeline::before{ left: 22px; }
-  .tl-item{ grid-template-columns: 60px 1fr; }
-  .tl-dot{ margin-left: 13px; } /* 22 - 9 */
+.cp-head{
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+.cp-list{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cp-btn{
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 12px;
+  cursor: pointer;
+  font: inherit;
+}
+.cp-btn.is-active{
+  border-color: #111;
+}
+.cp-sub{
+  display:block;
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 4px;
+}
+
+/*=== project dropdown ===*/
+.proj-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.proj-label{
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.proj-select{
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: #fff;
+  font: inherit;
 }
 
 
 
-       
+
+
+/* responsive (มือถือก็เหมือนเดิมอยู่แล้ว) */
+@media (max-width: 700px){
+  .timeline::before{ left: 23px; }
+  .tl-item{ grid-template-columns: 60px 1fr; }
+  .tl-dot{ margin-left: 13px; } /* 22 - 9 */
+  .cp-grid{ grid-template-columns: 1fr; }
+  .proj-row{ flex-direction: column; align-items: stretch; }
+  .proj-select{ width: 100%}
+}

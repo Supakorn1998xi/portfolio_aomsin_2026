@@ -1,23 +1,30 @@
 (() => {
-  const PROJECTS = [
+  // ===== DATA (แก้ชื่อบริษัท/โปรเจกต์/รูปได้ตรงนี้) =====
+  // รูปอยู่ใน folder: portfolio/
+  const DATA = [
     {
-      id: "dash-1",
-      category: "dashboard",
-      categoryLabel: "Dashboard",
-      slides: [
+      companyId: "possefy",
+      companyName: "Possefy Group Company (OPPO Thailand)",
+      /*companyNote: "BI / Dashboard / Reporting / Data Model"*/
+      projects: [
         {
-          img: "portfolio/dashboard_4.jpg",
-          title: "Tracking Delivery - Human resources & Warehouse (OPPO)",
-          badge: "Dashboard",
-          desc: "Dashboard Monitor",
-          bullets: [
-            "รายงาน จำนวนสินค้า Sell in และ Sell out ที่เข้ามาในคลังสินค้า แบ่งตาม ช่องทาง และเปรียบเทียบรายการยืนยันแล้ว กับรายการที่กำลังดำเนินการ",
-            "แสดงจำนวนสินค้าที่เข้ามาตามช่วงเวลาใน 1 วัน"
+          projectId: "sales-dashboard",
+          projectName: "Tracking Delivery Dashbaord",
+          projectNote: "Power BI /" + " SQL /" + " Google Script /" + " Python /" + " API /" + " Dax ",
+          slides: [
+            {
+              img: "portfolio/dashboard_4.jpg",
+              title: "Tracking Delivery - Human resources & Warehouse (OPPO)",
+              badge: "Dashboard",
+              desc: "Dashboard Monitor",
+              bullets: [
+                "รายงาน จำนวนสินค้า Sell in และ Sell out ที่เข้ามาในคลังสินค้า แบ่งตาม ช่องทาง และเปรียบเทียบรายการยืนยันแล้ว กับรายการที่กำลังดำเนินการ",
+                "แสดงจำนวนสินค้าที่เข้ามาตามช่วงเวลาใน 1 วัน"
           ],
           tags: ["Power BI", "SQL", "Google Script", "Python", "API", "Dax"],
           links: [{ label: "Detail", href: "#", icon: "📄" }]
         },
-        {
+            {
           img: "portfolio/dashboard_5.jpg",
           title: "Tracking Delivery - Human resources & Warehouse (OPPO)",
           badge: "Dashboard",
@@ -31,24 +38,31 @@
           tags: ["Power BI", "SQL", "Google Script", "Python", "API", "Dax"],
           links: [{ label: "Detail", href: "#", icon: "📄" }]
         },
+          ]
+        },
         {
-          img: "portfolio/dashboard_1.jpg",
-          title: "Lost Item Project - Finance & Ecommerce (OPPO)",
-          badge: "Dashboard",
-          desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
-          bullets: [
-            "Card bar สรุปจำนวนรายกาสินค้า และจำนวนเงินภาพรวมของแต่ละ Table ที่มีการนำมาเปรียบเทียบ และยอดคงเหลือจากการตรวจสอบแล้ว",
-            "นำเสนอจำนวนรายการสินค้าแยกตาม ช่องทาง Online และจำแนกผ่านทางสถานะ Clear / Not Clear",
-            "กราฟแสดงจำนวนรายการสินค้าแบ่งตามช่องทาง Online ที่ Not Clear ว่าเป็นเวลากี่วันแล้วที่ยังดำเนินการไม่แล้วเสร็จ"
+          projectId: "lost-item",
+          projectName: "Lost Item Project Dashboard",
+          projectNote: "Power BI /" + " SQL /" + " Excel /" + " Power Query /" + " Dax ",
+          slides: [
+            {
+              img: "portfolio/dashboard_1.jpg",
+              title: "Lost Item Project - Finance & Ecommerce (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
+              bullets: [
+                "Card bar สรุปจำนวนรายกาสินค้า และจำนวนเงินภาพรวมของแต่ละ Table ที่มีการนำมาเปรียบเทียบ และยอดคงเหลือจากการตรวจสอบแล้ว",
+                "นำเสนอจำนวนรายการสินค้าแยกตาม ช่องทาง Online และจำแนกผ่านทางสถานะ Clear / Not Clear",
+                "กราฟแสดงจำนวนรายการสินค้าแบ่งตามช่องทาง Online ที่ Not Clear ว่าเป็นเวลากี่วันแล้วที่ยังดำเนินการไม่แล้วเสร็จ"
           ],
           tags: ["Power BI", "SQL", "Excel", "Power Query", "Dax"],
           links: [{ label: "Detail", href: "#", icon: "📄" }]
         },
-        {
-          img: "portfolio/dashboard_2.jpg",
-          title: "Lost Item Project - Finance & Ecommerce (OPPO)",
-          badge: "Dashboard",
-          desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
+            {
+              img: "portfolio/dashboard_2.jpg",
+              title: "Lost Item Project - Finance & Ecommerce (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
           bullets: [
             "แนวโน้มจำนวนรายการสินค้า จำแนกตามประเภท การขนส่ง ชำระเงิน Online / เก็บเงินปลายทาง",
             "ตารางแสดง จำนวนสินค้าแบ่งตามประเภทสินค้า จำแนกตามประเภทการขนส่ง",
@@ -58,10 +72,10 @@
           links: [{ label: "Detail", href: "#", icon: "📄" }]
         },
         {
-          img: "portfolio/dashboard_3.jpg",
-          title: "Lost Item Project - Finance & Ecommerce (OPPO)",
-          badge: "Dashboard",
-          desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
+              img: "portfolio/dashboard_3.jpg",
+              title: "Lost Item Project - Finance & Ecommerce (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน รายการสถานะสินค้าที่ขายใน Platform Online",
           bullets: [
             "ตารางแสดงรายการสินค้า แบ่งเป็นประเภทของ Table ข้อมูล และผลรวมจากการนำมาเปรียบเทียบกันแล้ว",
             "ปุ่มที่สามารถกดเข้าไปดู Detail ของข้อมูลในแต่ละ Table ได้",
@@ -70,49 +84,290 @@
           tags: ["Power BI", "SQL", "Excel", "Power Query", "Dax"],
           links: [{ label: "Detail", href: "#", icon: "📄" }]
         }
+          ]
+        },
+        {
+           projectId: "grand-channel",
+          projectName: "Grand Channel Dashboard",
+          projectNote: "Power BI /" + " SQL /" + " Excel /"+ " Bigquery /" + " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/Grand_Channel-1.png",
+              title: "Grand Channel Dashboaed - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Channel และ Area ของแผนก Grand Channel",
+              bullets: [
+                "กราฟแสดงการเปรียบเทียบยอดขาย MOM ของ Brand โทรศัพท์ภายในร้าน",
+                "ตารางสรุปยอดขายในแต่ละ Brand แบ่งตามร้าน และจังหวัก ตามช่วงเวลาการเปรียบเทียบ",
+                "กราฟประเทศไทย แสดงจำนวนความหนาแน่น ของยอดขายในแต่ละจังหวัด",
+                "ตารางแสดงข้อมูลยอดขายตามจังหวัด และยอดการเปรียบเทียบ MOM และ %Share "
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+        {
+              img: "portfolio/Grand_Channel-2.png",
+              title: "Grand Channel Dashboaed - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Channel และ Area ของแผนก Grand Channel",
+              bullets: [
+                "Pie Chart แสดงสัดส่วนจำนวนยอดขายส่วนต่างแบ่งตามร้านค้า",
+                "ตารางแสดงข้อมูลห้างที่มีการตั้งร้านค้า และจังหวัด และจำนวนยอดขายเปรียบเทียบ MOM และ %Share",
+                "กราฟแท่งแสดงยอดขายแบ่งตามช่องทาง เปรียบเทียบยอดขาย MOM",
+                "ตารางแสดงข้อมูลช่องทางการขาย แบ่งตามแผนกช่องทาง และยอดขายเปรียบเทียบ MOM"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         {
+              img: "portfolio/Grand_Channel-4.jpg",
+              title: "Grand Channel Dashboaed - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Channel และ Area ของแผนก Grand Channel",
+              bullets: [
+                "Tred Line แสดงข้อมูลการเปรียบ MOM แบ่งตามร้านค้า",
+                "ตารางแสดงข้อมูลห้างที่มีการตั้งร้านค้า และจังหวัด และจำนวนยอดขายเปรียบเทียบ MOM และ %Share",
+                "กราฟแท่งแสดงยอดขายแบ่งตามช่องทาง เปรียบเทียบยอดขาย MOM",
+                "ตารางแสดงข้อมูลช่องทางการขาย แบ่งตามแผนกช่องทาง และยอดขายเปรียบเทียบ MOM"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         {
+              img: "portfolio/Grand_Channel-5.jpg",
+              title: "Grand Channel Dashboaed - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Channel และ Area ของแผนก Grand Channel",
+              bullets: [
+                "กราฟแท่ง แสดงข้อมูลการเปรียบ MOM แบ่งตามร้านค้า",
+                "ตารางแสดงข้อมูลห้างที่มีการตั้งร้านค้า และจังหวัด และจำนวนยอดขายเปรียบเทียบ MOM และ %Share",
+                "กราฟแท่งแสดงยอดขายแบ่งตามช่องทาง เปรียบเทียบยอดขาย MOM",
+                "ตารางแสดงข้อมูลช่องทางการขาย แบ่งตามแผนกช่องทาง และยอดขายเปรียบเทียบ MOM"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         {
+              img: "portfolio/Grand_Channel-3.png",
+              title: "Grand Channel Dashboaed - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Channel และ Area ของแผนก Grand Channel",
+              bullets: [
+                "กราฟแท่งแสดงยอดขายเปรียบเทียบ MOM แบ่งตาม Model ของแต่ละ Brand",
+                "ตารางแสดงข้อมูล Model และ Brand สรุปแบ่งเป็นยอดขาย แบ่งตามช่วง และยอดเปรียบเทียบ MOM , %Share"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        }
+      ]},
+      /* Display Tracking */
+      {
+        projectId: "display-tracking",
+          projectName: "Display Tracking Dashboard",
+          projectNote: "Power BI /" + " SQL /" + " Excel /"+ " Bigquery /" + " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/display_tracking2.jpg",
+              title: "Display Tracking - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Brand และราย Model ของแผนก Grand Channel",
+              bullets: [
+                "กราฟแสดงการเปรียบเทียบยอดขาย แบ่งตาม Brand โดยการคำนวณผ่าน Filter Model ที่เลือก",
+                "Pie Chart แสดง %Share แบ่งสัดส่วนยอดขายตาม Brand",
+                "ตารางสรุปยอดขาย แสดงรายละเอียด ร้านค้า และพื้นที่ จำนวนพนักงาน PC ที่อยู่ร้าน ณ ช่วงเวลาที่เลือก และจำนวนยอดขาย , ส่วนต่างของแต่ละ Brand ที่เลือก"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         {
+              img: "portfolio/display_tracking.jpg",
+              title: "Display Tracking - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน ยอดขายแบ่งตาม Brand และการดูยอดเปรียบเทียบระดับช่วงเวลา และราย Model ของแผนก Grand Channel",
+              bullets: [
+                "กราฟแสดงการเปรียบเทียบยอดขาย แบ่งตาม Brand โดยการคำนวณผ่าน Filter Model ที่เลือก",
+                "Pie Chart แสดง %Share แบ่งสัดส่วนยอดขายตาม Brand",
+                "ตารางสรุปยอดขาย แสดงรายละเอียด ร้านค้า และพื้นที่ จำนวนพนักงาน PC ที่อยู่ร้าน ณ ช่วงเวลาที่เลือก และจำนวนยอดขาย , ส่วนต่างของแต่ละ Brand ที่เลือก"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        }
+      ]},
+      /* allbrand */
+      {
+        projectId: "all-brand",
+          projectName: "All Brand Report",
+          projectNote: "Power BI /" + " SQL /" + " Excel /"+ " Bigquery /" + " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/all-brand-1.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW แยกตาม Sagement All Brand ของแผนก Grand Channel",
+              bullets: [
+                "ตารางแสดงยอดค่าส่วนต่าง WOW ของ Brand ตามที่เลือก และ %Share ส่วนต่างที่มีการขึ้นลง",
+                "ตารางแสดง Sagement Highlight แสดงข้อมูลค่า WOW ของแต่ละ Sagement และรายละเอียด Brand ที่เป็นยอดขายลำดับ 1 ของแต่ละ Sagement และเรียง Top 5 และ Reamrk เหตุการณ์ที่เกิดขึ้นแต่ละ Sagement ตาม Week ที่เลือก",
+                "กราฟ Stack ของทุก Brand แยกตาม Segment ให้เห็น %Share การขึ้นลงของ 4 สัปดาห์ย้อนหลัง"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+        {
+              img: "portfolio/all-brand-1-2.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW แยกตาม Sagement All Brand ของแผนก Grand Channel",
+              bullets: [
+                "ตารางแสดงยอดค่าส่วนต่าง MOM ของ Brand ตามที่เลือก และ %Share ส่วนต่างที่มีการขึ้นลง",
+                "ตารางแสดง Sagement Highlight แสดงข้อมูลค่า MOM ของแต่ละ Sagement และรายละเอียด Brand ที่เป็นยอดขายลำดับ 1 ของแต่ละ Sagement และเรียง Top 5 และ Reamrk เหตุการณ์ที่เกิดขึ้นแต่ละ Sagement ตาม Week ที่เลือก",
+                "กราฟ Stack ของทุก Brand แยกตาม Segment ให้เห็น %Share การขึ้นลงของ 4 สัปดาห์ย้อนหลัง"
+
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+
+         {
+              img: "portfolio/all-brand-2.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM แยกตาม Sagement All Brand ของแผนก Grand Channel",
+              bullets: [
+                "กราฟ Stack ของทุก Brand แยกตาม Segment ให้เห็น %Share การขึ้นลงของ 4 สัปดาห์ย้อนหลัง",
+                "ตารางแสดงรายละเอียดยอดขายของแต่ละ Brand แยกตามเดือน และ %Share MOM"
+
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         
+      ]},
+      /* model %share */
+      {
+        projectId: "all-brand",
+          projectName: "Model %Share Dashbaord",
+          projectNote: "Power BI /" + " SQL /" + " Excel /"+ " Bigquery /" + " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/model-1.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW , Week of month แยกตาม Sagement และเปรียบเทียบรายตามช่วงล่าสุดย้อนหลัง เช่น 1 เดือน , 1 สัปดาห์ย้อนหลัง แยกตาม Model ของแผนก Grand Channel",
+              bullets: [
+                "กราฟ Stack แสดง %Share ของ All Brand ยอดส่วนต่างยอดหลัง 4 สัปดาห์",
+                "ตารางแสดง Brand ที่เลือก และยอดขาย 4 สัปดาห์ย้อนหลังที่เลือก และผลรวมกับ ผลส่วนต่าง WOW จากสัปดาห์ล่าสุด"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+        {
+              img: "portfolio/model-1-2.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW , Week of month แยกตาม Sagement และเปรียบเทียบรายตามช่วงล่าสุดย้อนหลัง เช่น 1 เดือน , 1 สัปดาห์ย้อนหลัง แยกตาม Model ของแผนก Grand Channel",
+              bullets: [
+                "กราฟ Stack แสดง %Share ของ All Brand ยอดส่วนต่างตามเดือนเริ่มต้น และเดือนสิ้นสุดที่เลือก",
+                "ตารางแสดง Brand ที่เลือก และยอดขายตามเดือนเริ่มต้น และเดือนสิ้นสุดที่เลือก และผลรวมกับ ผลส่วนต่าง MOM จากเดือนล่าสุด"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+        {
+              img: "portfolio/model-1-3.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW , Week of month แยกตาม Sagement และเปรียบเทียบรายตามช่วงล่าสุดย้อนหลัง เช่น 1 เดือน , 1 สัปดาห์ย้อนหลัง แยกตาม Model ของแผนก Grand Channel",
+              bullets: [
+                "กราฟ Stack แสดง %Share ของ All Brand ยอดสะสม 5 สัปดาห์ของทุกเดือนที่เลือก",
+                "ตารางแสดง Brand ที่เลือก และยอดขายสะสม 5 สัปดาห์ของทุกเดือนที่เลือก และผลรวมกับ ผลส่วนต่าง Week of month สัปดาห์ 4 - 5"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+         {
+              img: "portfolio/model-2.jpg",
+              title: "All Brand Report - Grand Channel (OPPO)",
+              badge: "Dashboard",
+              desc: "รายงาน MOM และ WOW , Week of month แยกตาม Sagement และเปรียบเทียบรายตามช่วงล่าสุดย้อนหลัง เช่น 1 เดือน , 1 สัปดาห์ย้อนหลัง แยกตาม Model ของแผนก Grand Channel",
+              bullets: [
+                "ตารางแสดงยอดผลรวม แบ่งตาม Segemnt จำแนกตาม Brand มีค่าผลรวม และ%Share ของแต่ละ Sagment , ยอดส่วนต่างตาม Display ที่เลือก (WOW,MOM) %Share ALl Brand คือ ยอดเปรียบเทียบ %Share ของสัปดาห์ที่แล้ว , เดือนที่แล้ว ของแต่ละ Brand,Segment",
+                "ตารางสรุปยอดขายแยกตาม Model แสดงรายการ Model แยกตาม Brand , Remark แสดงการปรับราคา และวันที่เริ่มขาย , ราคาของรุ่น ,ยอดขายรวม , แสดงยอดขายแยกตาม 4 สัปดาห์ก่อนหน้า , เดือนที่เลือก"
+          ],
+          tags: ["Power BI", "SQL", "Excel", "Bigquery", "Web Dashboard"],
+          links: [{ label: "Detail", href: "#", icon: "📄" }]
+        },
+      ]},
+      
+        
+      ],
+      
+      
+    },
+    {
+      companyId: "pmg",
+      companyName: "Rama 2 Medical Group (PMG Hospital Rama2)",
+      /*companyNote: "Web App / Data"*/
+      projects: [
+        {
+          projectId: "hospital-pmg",
+          projectName: "PMG Power Bi Dashboard Report",
+          projectNote: "Power BI /" + " Excel /" + " Power Query /"+ " Microsoft SQL Server ",
+          slides: [
+            {
+              img: "portfolio/pmg-1.png",
+              title: "PMG Power Bi Dashboard Report",
+              badge: "Dashboard",
+              desc: "รายงานยอดผู้ป่วยรายวันของโรงพยาบาล PMG",
+              bullets: ["RBAC", "Session/JWT", "ป้องกันเข้าหน้าโดยตรง"],
+              tags: ["Power Bi", "Excel","Power Query","Microsoft SQL Server"],
+              /*links: [{ label: "Repo", href: "#", icon: "💻" }]*/
+            },
+            
+          ]
+        }
       ]
     },
     {
-      id: "web-1",
-      category: "webapp",
-      categoryLabel: "Web App",
-      slides: [
+      companyId: "internal",
+      companyName: "Internal / Personal Projects",
+      companyNote: "Web App / Data",
+      projects: [
         {
-          img: "portfolio/web_1.png",
-          title: "Contract Tracker — Login",
-          badge: "Web App",
-          desc: "หน้า Login + Permission ตาม Role",
-          bullets: ["RBAC", "Session/JWT", "ป้องกันเข้าหน้าโดยตรง"],
-          tags: ["Laravel", "MySQL"],
-          links: [{ label: "Repo", href: "#", icon: "💻" }]
-        },
-        {
-          img: "portfolio/web_2.png",
-          title: "Contract Tracker — Dashboard",
-          badge: "Web App",
-          desc: "สรุปสถานะเอกสาร + ค้นหา/กรอง",
-          bullets: ["Filter สถานะ/วันที่", "Audit log", "แจ้งเตือนสถานะค้าง"],
-          tags: ["Laravel", "UI"],
-          links: [{ label: "Demo", href: "#", icon: "▶" }]
+          projectId: "contract-tracker",
+          projectName: "Contract Status Tracker",
+          projectNote: "Web App + Role-based access",
+          slides: [
+            {
+              img: "portfolio/web_1.png",
+              title: "Login & Permission",
+              badge: "Web App",
+              desc: "Login + Permission แยกตาม Role",
+              bullets: ["RBAC", "Session/JWT", "ป้องกันเข้าหน้าโดยตรง"],
+              tags: ["Laravel", "MySQL"],
+              links: [{ label: "Repo", href: "#", icon: "💻" }]
+            },
+            {
+              img: "portfolio/web_2.png",
+              title: "Dashboard & Filter",
+              badge: "Web App",
+              desc: "สรุปสถานะเอกสาร + ค้นหา/กรอง",
+              bullets: ["Filter สถานะ/วันที่", "Audit log", "แจ้งเตือนงานค้าง"],
+              tags: ["Laravel", "UI"],
+              links: [{ label: "Demo", href: "#", icon: "▶" }]
+            }
+          ]
         }
       ]
     }
   ];
 
-  // Utility function
-  function escapeHtml(s) {
-    return String(s)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
+  // ===== ELEMENTS =====
+  const companySelect = document.getElementById("companySelect");
+  const projectSelect = document.getElementById("projectSelect");
 
-  // Elements
-  const track = document.getElementById("portTrack");
-  const dots = document.getElementById("portDots");
-  const viewport = document.querySelector(".port-viewport");
+  const trackEl = document.getElementById("portTrack");
+  const dotsEl = document.getElementById("portDots");
+  const viewportEl = document.querySelector(".port-viewport");
   const prevBtn = document.querySelector(".port-nav.prev");
   const nextBtn = document.querySelector(".port-nav.next");
 
@@ -127,94 +382,127 @@
   const lightboxImg = document.getElementById("lightboxImg");
   const lightboxCaption = document.getElementById("lightboxCaption");
 
-  if (!track || !dots || !viewport || !prevBtn || !nextBtn) return;
+  if (!companySelect || !projectSelect || !trackEl || !dotsEl || !viewportEl || !prevBtn || !nextBtn) return;
 
-  // Flatten slides
-  function flatten(list) {
-    const out = [];
-    list.forEach(p => {
-      p.slides.forEach((s, idx) => {
-        out.push({
-          key: `${p.id}-${idx}`,
-          category: p.category,
-          projectLabel: p.categoryLabel,
-          ...s
-        });
-      });
-    });
-    return out;
-  }
+  // ===== STATE =====
+  let activeCompanyIndex = 0;
+  let activeProjectIndex = 0;
 
-  let allSlides = flatten(PROJECTS);
-  let filteredSlides = allSlides.slice();
+  let slides = []; // current project slides
   let currentIndex = 0;
 
-  // Lightbox functions
-  function openLightbox(slide) {
-    if (!lightbox || !lightboxImg) {
-      console.error("Lightbox elements not found!");
-      return;
-    }
-    
-    console.log("Lightbox found, showing image:", slide.img);
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    lightbox.style.display = "flex"; // เพิ่มบรรทัดนี้
-    lightboxImg.src = slide.img;
-    lightboxImg.alt = slide.title || "Preview";
-    if (lightboxCaption) lightboxCaption.textContent = slide.title || "";
-    document.documentElement.style.overflow = "hidden";
+  // ===== RENDER: Company =====
+  // ===== RENDER: Companies (Dropdown) =====
+function renderCompanies() {
+  companySelect.innerHTML = DATA.map((c, i) => `
+    <option value="${i}">
+      ${escapeHtml(c.companyName)}${c.companyNote ? " — " + escapeHtml(c.companyNote) : ""}
+    </option>
+  `).join("");
+
+  companySelect.value = String(activeCompanyIndex);
+
+  companySelect.addEventListener("change", () => {
+  activeCompanyIndex = Number(companySelect.value);
+  activeProjectIndex = 0;       // reset โปรเจกต์เมื่อเปลี่ยนบริษัท
+  renderProjects();
+  loadProjectSlides();
+});
+}
+
+  // ===== RENDER: Projects (Dropdown) =====
+function renderProjects() {
+  const company = DATA[activeCompanyIndex];
+  const projects = company.projects || [];
+
+  projectSelect.innerHTML = projects.map((p, i) => `
+    <option value="${i}">
+      ${escapeHtml(p.projectName)}${p.projectNote ? " — " + escapeHtml(p.projectNote) : ""}
+    </option>
+  `).join("");
+
+  // set ค่า active
+  projectSelect.value = String(activeProjectIndex);
+
+  projectSelect.addEventListener("change", () => {
+  activeProjectIndex = Number(projectSelect.value);
+  loadProjectSlides();
+});
+}
+
+
+
+
+
+  // ===== Load slides for active project =====
+  function loadProjectSlides() {
+    const company = DATA[activeCompanyIndex];
+    const project = company.projects?.[activeProjectIndex];
+
+    slides = (project?.slides || []).slice();
+    currentIndex = 0;
+
+    renderSlider();
   }
 
-  function closeLightbox() {
-    if (!lightbox || !lightboxImg) return;
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightbox.style.display = "none"; // เพิ่มบรรทัดนี้
-    lightboxImg.src = "";
-    if (lightboxCaption) lightboxCaption.textContent = "";
-    document.documentElement.style.overflow = "";
-  }
-
-  function renderSlides() {
-    if (filteredSlides.length === 0) {
-      track.innerHTML = `<div class="port-slide"><div style="padding:24px">ยังไม่มีรายการในหมวดนี้</div></div>`;
-      dots.innerHTML = "";
+  // ===== Slider render =====
+  function renderSlider() {
+    if (slides.length === 0) {
+      trackEl.innerHTML = `<div class="port-slide"><div style="padding:24px">ยังไม่มีสไลด์ในโปรเจกต์นี้</div></div>`;
+      dotsEl.innerHTML = "";
       setDetail(null);
       prevBtn.style.visibility = "hidden";
       nextBtn.style.visibility = "hidden";
       return;
     }
 
-    track.innerHTML = filteredSlides.map((s, i) => `
+    trackEl.innerHTML = slides.map((s) => `
       <div class="port-slide">
         <img src="${s.img}" alt="${escapeHtml(s.title)}">
-        <button class="port-zoom" type="button" aria-label="Expand image" data-zoom="${i}">
-          ⤢
-        </button>
+        <button
+          class="port-zoom"
+          type="button"
+          aria-label="Expand image"
+          data-src="${s.img}"
+          data-title="${escapeHtml(s.title)}"
+        >⤢</button>
       </div>
     `).join("");
 
-    dots.innerHTML = filteredSlides.map((_, i) => `
-      <button class="port-dot ${i === 0 ? "is-active" : ""}" type="button" data-dot="${i}" aria-label="Go to slide ${i + 1}"></button>
+    dotsEl.innerHTML = slides.map((_, i) => `
+      <button class="port-dot ${i===0?"is-active":""}" type="button" data-dot="${i}" aria-label="Go to slide ${i+1}"></button>
     `).join("");
 
-    dots.querySelectorAll(".port-dot").forEach(btn => {
+    dotsEl.querySelectorAll(".port-dot").forEach(btn => {
       btn.onclick = () => {
         currentIndex = Number(btn.dataset.dot);
         update();
       };
     });
 
-    prevBtn.style.visibility = filteredSlides.length <= 1 ? "hidden" : "visible";
-    nextBtn.style.visibility = filteredSlides.length <= 1 ? "hidden" : "visible";
+    const single = slides.length <= 1;
+    prevBtn.style.visibility = single ? "hidden" : "visible";
+    nextBtn.style.visibility = single ? "hidden" : "visible";
+    dotsEl.style.visibility = single ? "hidden" : "visible";
 
-    currentIndex = 0;
     update();
   }
 
-  function setDetail(slide) {
-    if (!slide) {
+  function update() {
+    if (slides.length === 0) return;
+
+    currentIndex = (currentIndex + slides.length) % slides.length;
+    trackEl.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dotsEl.querySelectorAll(".port-dot").forEach((d, i) => {
+      d.classList.toggle("is-active", i === currentIndex);
+    });
+
+    setDetail(slides[currentIndex]);
+  }
+
+  function setDetail(s) {
+    if (!s) {
       slideTitle.textContent = "—";
       slideBadge.textContent = "—";
       slideDesc.textContent = "—";
@@ -224,54 +512,29 @@
       return;
     }
 
-    slideTitle.textContent = slide.title || "—";
-    slideBadge.textContent = slide.badge || slide.projectLabel || "—";
-    slideDesc.textContent = slide.desc || "";
+    slideTitle.textContent = s.title || "—";
+    slideBadge.textContent = s.badge || "—";
+    slideDesc.textContent = s.desc || "";
 
-    slideBullets.innerHTML = (slide.bullets || []).map(b => `<li>${escapeHtml(b)}</li>`).join("");
-    slideTags.innerHTML = (slide.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-    slideActions.innerHTML = (slide.links || [])
-      .map(l => `<a href="${l.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.icon || "↗")} ${escapeHtml(l.label)}</a>`)
-      .join("");
+    slideBullets.innerHTML = (s.bullets || []).map(b => `<li>${escapeHtml(b)}</li>`).join("");
+    slideTags.innerHTML = (s.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+    slideActions.innerHTML = (s.links || []).map(l =>
+      `<a href="${l.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.icon||"↗")} ${escapeHtml(l.label)}</a>`
+    ).join("");
   }
 
-  function update() {
-    const total = filteredSlides.length;
-    if (total === 0) return;
+  // ===== Slider controls =====
+  prevBtn.addEventListener("click", () => { currentIndex -= 1; update(); });
+  nextBtn.addEventListener("click", () => { currentIndex += 1; update(); });
 
-    currentIndex = (currentIndex + total) % total;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    dots.querySelectorAll(".port-dot").forEach((d, i) => {
-      d.classList.toggle("is-active", i === currentIndex);
-    });
-
-    setDetail(filteredSlides[currentIndex]);
-  }
-
-  // Navigation controls
-  prevBtn.addEventListener("click", () => { 
-    currentIndex -= 1; 
-    update(); 
-  });
-  
-  nextBtn.addEventListener("click", () => { 
-    currentIndex += 1; 
-    update(); 
-  });
-
-  viewport.addEventListener("keydown", (e) => {
+  viewportEl.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") prevBtn.click();
     if (e.key === "ArrowRight") nextBtn.click();
   });
 
-  // Touch swipe support
   let startX = null;
-  viewport.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  viewport.addEventListener("touchend", (e) => {
+  viewportEl.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX), { passive: true });
+  viewportEl.addEventListener("touchend", (e) => {
     if (startX == null) return;
     const dx = e.changedTouches[0].clientX - startX;
     startX = null;
@@ -279,50 +542,54 @@
     dx > 0 ? prevBtn.click() : nextBtn.click();
   });
 
-  // Tab filters
-  document.querySelectorAll(".port-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      const filter = tab.dataset.filter;
+  // ===== Lightbox =====
+  function openLightboxBy(src, title) {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    lightboxImg.src = src;
+    lightboxImg.alt = title || "Preview";
+    if (lightboxCaption) lightboxCaption.textContent = title || "";
+    document.documentElement.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+    if (lightboxCaption) lightboxCaption.textContent = "";
+    document.documentElement.style.overflow = "";
+  }
 
-      document.querySelectorAll(".port-tab").forEach(t => {
-        const active = t === tab;
-        t.classList.toggle("is-active", active);
-        t.setAttribute("aria-selected", active ? "true" : "false");
-      });
-
-      filteredSlides = (filter === "all")
-        ? allSlides.slice()
-        : allSlides.filter(s => s.category === filter);
-
-      renderSlides();
-    });
-  });
-
-  // Lightbox event handlers
-  track.addEventListener("click", (e) => {
+  trackEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".port-zoom");
     if (!btn) return;
-
-    const idx = Number(btn.dataset.zoom);
-    const slide = filteredSlides[idx];
-    if (!slide) return;
-
-    console.log("Opening lightbox for:", slide.title); // debug
-    openLightbox(slide);
+    const src = btn.dataset.src;
+    const title = btn.dataset.title || "";
+    if (!src) return;
+    openLightboxBy(src, title);
   });
 
   lightbox?.addEventListener("click", (e) => {
-    if (e.target.closest("[data-close]") || e.target === lightbox) {
-      closeLightbox();
-    }
+    if (e.target.closest("[data-close]")) closeLightbox();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox?.classList.contains("is-open")) {
-      closeLightbox();
-    }
+    if (e.key === "Escape" && lightbox?.classList.contains("is-open")) closeLightbox();
   });
 
-  // Initialize
-  renderSlides();
+  // ===== Utils =====
+  function escapeHtml(s) {
+    return String(s)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  // ===== Init =====
+  renderCompanies();
+  renderProjects();
+  loadProjectSlides();
 })();

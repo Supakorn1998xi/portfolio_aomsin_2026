@@ -15,11 +15,11 @@
             </div>
 
             <nav class ="header-actions" aria-label="Header actions">
-                <a class = "btn primary" type = "button"> About Me </a>
+                <a class = "btn primary" type = "button"> Home </a>
                 <a class = "btn" href="#skills"> Skills </a>
-                <a class = "btn" href = "#projects"> Projects </a>
-                <button class = "btn" type = "button"> Resume </button>
-                <button class = "btn" type = "button"> About </button>
+                <a class = "btn" href = "#portfolio"> Projects </a>
+                <!--<button class = "btn" type = "button"> Resume </button>
+                <button class = "btn" type = "button"> About </button>-->
             </nav>
         </div>
     </header>
@@ -215,34 +215,53 @@
 </section>
 
 <!-- project -->
- <section id="projects" class="skills-section">
-    <div class="skills-inner">
-        <h2>Project</h2>
-        <p class="muted">เลือกหมวดหมู่ แล้วเลื่อนรูปเพื่อดูตัวอย่างผลงาน</p>
+<section id="portfolio" class="skills-section">
+  <div class="skills-inner">
+    <h2>Portfolio</h2>
+    <p class="muted">เลือกบริษัท → เลือกโปรเจกต์ → เลื่อนรูปเพื่อดูรายละเอียด</p>
 
-        <!-- tab -->
-    <div class="port-tabs" role="tablist" aria-label="Project Categoyies">
-        <button class="port-tab is-active" type="button" data-filter="all" role="tab" aria-selected="true">ทั้งหมด</button>
-        <button class="port-tab" type="button" data-filter="dashboard" role="tab" aria-selected="false">Possefy Group Company (OPPO Thailand)</button>
-        <button class="port-tab" type="button" data-filter="webapp" role="tab" aria-selected="false">Web App</button>
-        <button class="port-tab" type="button" data-filter="data" role="tab" aria-selected="false">Data</button>
+    <!-- Company + Project selector -->
+    <div class="cp-grid">
+      <div>
+      <div class="proj-row" aria-lebel="Company selector">
+        <label class="proj-label" for="companySelect">Company</label>
+
+        <select class="proj-select" id="companySelect" aria-label="Select company">
+            <!-- option create by js-->
+        </select>
+      </div>
+      </div>
+    
+      <div>
+      <div class="proj-row" aria-lebel="Project selector">
+        <label class="proj-label" for="projectSelect">Project</label>
+
+        <select class="proj-select" id="projectSelect" aria-label="Select project">
+            <!-- option create by js-->
+        </select>
+      </div>
+      </div>
+
+      <!--<div-- class="cp-col">
+        <h3 class="cp-head">โปรเจกต์</h3>
+        <div class="cp-list" id="projectList" role="list"></div>
+      </div-->
     </div>
 
-        <!-- Slicer -->
-    <div class="port-slider" aria-label="Project Images">
-        <!-- ปุ่ม outside view report เพื่อไม่โดน overflow:hidden ตัด-->
-         <button class="port-nav prev" type="button" aria-label="Previous images">‹</button>
+    <!-- Slider -->
+    <div class="port-slider" aria-label="Project slider">
+      <button class="port-nav prev" type="button" aria-label="Previous">‹</button>
 
-         <div class="port-viewport" tabindex="0" aria-label="Slider viewport">
-            <div class="port-track" id="portTrack"></div>
-         </div>
+      <div class="port-viewport" tabindex="0" aria-label="Slider viewport">
+        <div class="port-track" id="portTrack"></div>
+      </div>
 
-         <button class="port-nav next" type="button" aria-label="Next image">›</button>
+      <button class="port-nav next" type="button" aria-label="Next">›</button>
 
-         <div class="port-dots" id="portDots" aria-label="Slicer dots"></div>
+      <div class="port-dots" id="portDots" aria-label="Slider dots"></div>
     </div>
 
-<!-- Detail: เปลี่ยนตามสไลด์ -->
+    <!-- Detail -->
     <div class="port-detail" aria-live="polite">
       <div class="port-detail-head">
         <h3 class="port-title" id="slideTitle">—</h3>
@@ -256,7 +275,30 @@
       <div class="port-actions" id="slideActions"></div>
     </div>
   </div>
- </section>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-close="1"></div>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" type="button" aria-label="Close" data-close="1">✕</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-close="1"></div>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" type="button" aria-label="Close" data-close="1">✕</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script src="portfolio.js"></script>
+
 
 
 
