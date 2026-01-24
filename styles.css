@@ -3,6 +3,7 @@
             --text:#111;
             --muted:#666;
             --bg:#fff;
+            --font-sans: "Prompt", system-ui, -apple-system, "Segoe UI", Roboto , Arial , sans-serif;
         }
 
          html{
@@ -11,7 +12,7 @@
 
         body{
             margin:0;
-            font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            font-family: var(--font-sans);
             color:var(--text);
             background:#fafafa;
         }
@@ -132,7 +133,7 @@
 
         .styles_text__CPBAz {
         color: #999;
-        font-size: 1.2rem;
+        font-size: 1.0rem;
 }
 
         /* close line download button */
@@ -834,12 +835,12 @@
 
 .lightbox-close {
   position: absolute;
-  top: -40px;
-  right: 0;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
   padding: 10px;
   line-height: 1;
@@ -929,6 +930,264 @@
   font: inherit;
 }
 
+/* about me */
+
+/* ===== About (no timeline) ===== */
+.about-hero{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+  width: 34%;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.about-avatar{
+  width: 340px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+}
+.about-avatar img{ width:100%; height:100%; object-fit: cover; display:block; }
+
+.about-name{ margin: 0 0 6px; font-size: 22px; }
+.about-role{ margin: 0 0 10px; }
+
+.about-meta{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px; }
+.chip{
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #fff;
+}
+
+.about-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.about-card{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+  padding: 16px;
+}
+.about-card h3{ margin: 0 0 10px; font-size: 18px; }
+
+/* Personal info list */
+.info-list{ display:grid; gap: 10px; }
+.info-item{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  background: #fff;
+}
+.info-label{ font-weight: 600; margin-bottom: 4px; }
+.info-body{ margin: 0; }
+
+/* Education cards */
+.edu-list{ display:grid; gap: 10px; }
+.edu-card{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  background: #fff;
+}
+.edu-top{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.edu-title{ font-weight: 600; }
+
+/* Certificates grid (ใช้ของเดิมได้) */
+.cert-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+.cert{
+  grid-column: span 4;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow:hidden;
+  background:#fff;
+  cursor:pointer;
+}
+.cert .thumb{ aspect-ratio: 4/3; background:#f3f4f6; }
+.cert img{ width:100%; height:100%; object-fit:cover; display:block; }
+.cert .cap{ padding: 10px 12px; font-size: 13px; border-top: 1px solid var(--border); }
+
+/*footer*/
+#contact{ scroll-margin-top: 90px; } /* ปรับตามความสูง header */
+
+.site-footer{
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.footer-inner{
+  max-width: 1100px;   /* ถ้าคุณมี container อยู่แล้วใช้ของเดิมได้ */
+  margin: 0 auto;
+  padding: 26px 16px;
+  box-sizing: border-box;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.contact-card{
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+}
+
+.contact-label{
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.footer-bottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* button doc review */
+/*.doc-actions{ align-content: right;}*/
+.doc-btn{
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+  margin-left: 570px;
+}
+
+/* doc-modal */
+.doc-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.doc-modal.is-open{ display: block; }
+
+.doc-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.45);
+}
+
+.doc-dialog{
+  position: relative;
+  max-width: 900px;
+  width: calc(100% - 24px);
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.2);
+}
+
+.doc-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.doc-title{ font-weight: 600; }
+.doc-close{
+  border:0; background: transparent; cursor:pointer; font-size: 18px;
+}
+
+.doc-body{
+  padding: 12px;
+  background: #f3f4f6;
+}
+
+.doc-body img{
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  display:block;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.doc-foot{
+  padding: 12px 14px;
+  border-top: 1px solid #e9e9e9;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.doc-download{
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font: inherit;
+}
+
+
+
+
+/*responsive*/
+@media (max-width: 1024px) {
+  .doc-btn {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-btn {
+    margin-left: 0;
+  }
+}
+
+
+@media (max-width: 900px){
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-hero{ grid-template-columns: 1fr; }
+  .about-avatar{ width: 100%; height: 220px; }
+  .about-grid{ grid-template-columns: 1fr; }
+  .cert{ grid-column: span 6; }
+}
+@media (max-width: 520px){
+  .cert{ grid-column: span 12; }
+  .doc-btn{margin-left :60%;
+}
+}
 
 
 

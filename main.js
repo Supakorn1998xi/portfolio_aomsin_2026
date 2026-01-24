@@ -98,6 +98,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "เชื่อมต่อและเรียกใช้งาน API เพื่อดึงและแสดงผลข้อมูลบนหน้าเว็บหรือ Dashboard",
       ],
     },
+    rappid: {
+      title: "Rappid Minner",
+      desc: "ทักษะการใช้ RapidMiner สำหรับงานวิเคราะห์ข้อมูลและเหมืองข้อมูล",
+      bullets: [
+        "ใช้งาน RapidMiner ในการเตรียมข้อมูล (Data Preparation) และทำความสะอาดข้อมูล",
+        "สร้างและทดสอบโมเดล Machine Learning แบบไม่ต้องเขียนโค้ด (No-Code / Low-Code)",
+        "วิเคราะห์และประเมินผลโมเดลเพื่อสนับสนุนการตัดสินใจทางธุรกิจ",
+      ],
+    },
+    quick: {
+      title: "Quick Sight",
+      desc: "ทักษะการใช้ Amazon QuickSight สำหรับการวิเคราะห์และแสดงผลข้อมูล",
+      bullets: [
+        "ออกแบบและพัฒนา Dashboard เพื่อแสดงผลข้อมูลเชิงธุรกิจบน Cloud",
+        "เชื่อมต่อข้อมูลจากแหล่งต่าง ๆ เช่น Database และ Cloud Data Source เพื่อการวิเคราะห์",
+        "สร้าง Visualization, Filter และ Calculation เพื่อสนับสนุนการตัดสินใจของผู้ใช้งาน",
+      ],
+    },
   };
 
   const pills = document.querySelectorAll(".skill-pill");
@@ -170,5 +188,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavios: "smooth" });
+  });
+})();
+
+/* amout me */
+// ===== About: Certificate Lightbox (reuse portfolio lightbox) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("certGrid");
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  const cap = document.getElementById("lightboxCaption");
+
+  // debug กันเงียบ
+  if (!grid) { console.warn("certGrid not found"); return; }
+  if (!lb || !img || !cap) { console.warn("lightbox elements not found"); return; }
+
+  const open = (src, text) => {
+    lb.classList.add("is-open");
+    lb.setAttribute("aria-hidden", "false");
+    img.src = src;
+    img.alt = text || "Preview";
+    cap.textContent = text || "";
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    lb.classList.remove("is-open");
+    lb.setAttribute("aria-hidden", "true");
+    img.src = "";
+    img.alt = "";
+    cap.textContent = "";
+    document.documentElement.style.overflow = "";
+  };
+
+  grid.addEventListener("click", (e) => {
+    const item = e.target.closest(".cert");
+    if (!item) return;
+    const src = item.dataset.img;
+    const text = item.dataset.cap || "";
+    if (!src) return;
+    open(src, text);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    const item = e.target.closest(".cert");
+    if (!item) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      const src = item.dataset.img;
+      const text = item.dataset.cap || "";
+      if (!src) return;
+      open(src, text);
+    }
+  });
+
+  lb.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close]")) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lb.classList.contains("is-open")) close();
+  });
+});
+
+/* doc model */
+(function(){
+  const modal = document.getElementById('docModal');
+  const img  = document.getElementById('docPreview');
+  const dl = document.getElementById('docDownload');
+
+  function openModel(previewSrc, downloadSrc){
+    img.src = previewSrc;
+    dl.href = downloadSrc;
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeModel(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    img.src = '';
+    dl.removeAttribute('href');
+    document.body.style.overflow = '';
+  }
+
+  //click buttom document (support mulitiper buttom)
+  document.addEventListener('click', (e) =>{
+    const btn = e.target.closest('.doc-btn');
+    if (btn){
+      const previewSrc = btn.dataset.preview;
+      const downloadSrc = btn.dataset.download || previewSrc;
+      openModel(previewSrc, downloadSrc);
+      return;
+    }
+
+    // close model
+    if (e.target.matches('[data-close]')) closeModel();
+  });
+
+  // esc close
+  document.addEventListener('keydown', (e) =>{
+    if (e.key === 'Escape' && model.classList.contains('is-open')) closeModel();
   });
 })();

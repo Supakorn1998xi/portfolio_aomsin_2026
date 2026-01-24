@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="app-header">
@@ -14,17 +18,19 @@
                 <div class="subtitle"> Data Analyst </div>
             </div>
 
-            <nav class ="header-actions" aria-label="Header actions">
-                <a class = "btn primary" type = "button"> Home </a>
+            <nav class ="header-actions"  aria-label="Header actions">
+                <a class = "btn primary" href ="#hero" type = "button"> Home </a>
                 <a class = "btn" href="#skills"> Skills </a>
                 <a class = "btn" href = "#portfolio"> Projects </a>
+                <a class = "btn" href = "#about"> About Me</a>
+                <a class = "btn" href = "#contact"> Contact Me</a>
                 <!--<button class = "btn" type = "button"> Resume </button>
                 <button class = "btn" type = "button"> About </button>-->
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-layout">
 
             <div class="hero-inner">
@@ -82,9 +88,22 @@
                 </article>
 
                  <article class="tl-item">
+                   
                     <div class="tl-dot" aria-hidden="true"></div>
                     <div class="tl-card">
-                    <div class="tl-time">2023 - 2024</div>
+                         
+                    <div >
+                        <span>2023 - 2024</span>
+                    <button class="doc-btn" type="button"
+                            data-preview="portfolio/pmg-book.jpg"
+                            data-download="portfolio/pmg-book.jpg"
+                            data-title="หนังสือรับรองการทำงาน"
+                            data-filename="WorkCertificate_2023-2024.png">
+                    📄 หนังสือรับรองการทำงาน
+                    </button>
+
+                       
+
                     <h3 class="tl-title">Data Analyst</h3><br>
                     <div class="tl-company">
                         <span class="tl-logo2"><img src="pmg.jpg" alt="PMG"></span>
@@ -198,6 +217,21 @@
             </button>
         </li>
 
+        <li>
+            <button class="skill-pill" type="button" data-skill="script" data-tip="Google Script" aira-label="CSS"><img src="scrpit.png" alt="Google Script">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="rappid" data-tip="Rappid Miner" aira-label="CSS"><img src="rappid.jpg" alt="Rappid Miner">
+            </button>
+        </li>
+
+        <li>
+            <button class="skill-pill" type="button" data-skill="quick" data-tip="Rappid Miner" aira-label="CSS"><img src="quick.svg" alt="Rappid Miner">
+            </button>
+        </li>
+
     </div>
 
     <!-- Details panel -->
@@ -277,6 +311,166 @@
   </div>
 </section>
 
+ <section id ="about" class="skills-section">
+    <div class="skills-inner">
+        <h2>About Me</h2>
+        <p class="muted">ประวัติส่วนตัว • ประวัติการศึกษา • ผลงานและเกียรติบัตร</p>
+
+        <!-- Hrro -->
+         <div class="about-hero">
+            <div class="about-avatar">
+                <img src="portfolio/profile.jpg" alt="Profile">
+            </div>
+         </div>
+<br>
+         <div>
+            <h3 class="about-name">Supakorn Singtheintrakul (Aomsin)</h3>
+            <P class="muted about-role">Positon : Data Analyst / BI Developer</P>
+            <p class="muted" style = "margin:0;">
+                ผมเป็น Data Analyst ที่เชี่ยวชาญการวิเคราะห์ข้อมูลด้วย Power BI, SQL และ BigQuery
+                มีประสบการณ์สร้าง Dashboard เชิงธุรกิจ และออกแบบ Data Pipeline จาก API → Database → Visualization
+                สามารถพัฒนา Web App และ Automation ด้วย HTML, CSS, Python, JavaScript และ Google Apps Script
+                สนใจการสร้าง Data Platform, ระบบอัตโนมัติ และโซลูชันข้อมูลที่ใช้งานได้จริงในองค์กร
+            </p>
+
+            <div class="about-meta">
+                <span class="chip">📍Bang Khae, Bangkok Thailand </span>
+                <span class="chip">✉️ supakorn0019@gmail.com</span>
+                <Span class="chip">🔗 LinkedIn : Supakorn Singtheintrakul Github : Supakorn1998xi</Span>
+            </div>
+         </div>
+    </div>
+
+    <!-- grid -->
+     <div class="about-grid">
+        <!-- personal -->
+         <section class="about-card">
+            <h3>ประวัติส่วนตัว</h3>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-label">จุดเด่น</div>
+                    <div class="info-body muted">วิเคราะห์ข้อมูล, ทำ dashboard, ทำ web app, automation</div>
+                </div>
+            
+
+            <div class="info-item">
+                <div class="info-label">ด้านที่สนใจ</div>
+                <div class="info-body muted">BI, Data Modeling, Python, Cloud, AI, Web App </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Tools/Stack</div>
+                <div class="info-body muted">SQL, Power BI, Looker Studio, Bug Query, Python, HTML/CSS/JS</div>
+            </div>
+            </div>
+         </section>
+
+         <!-- Education -->
+          <section class="about-card">
+                <h3>ประวัติการศึกษา</h3>
+
+                <div class="edu-list">
+                    <article class="edu-card">
+                        <div class="edu-top">
+                            <span class="edu-year chip">2019 - 2022</span>
+                            <strong class="edu-title">ปริญญาตรี สาขาวิชา เทคโนโลยีสารสนเทศ วิชาเอก ธุรกิจอัจฉริยะ และการวิเคราะห์ข้อมูล</strong>
+                        </div>
+                    <p class="muted" style="margin:6px 0 0;">มหาวิทยาลัยเทคโนโลยีสุรนารี</p>   
+                    </article>
+
+                    <article class="edu-card">
+                        <div class="edu-top">
+                            <span class="edu-year chip">2023</span>
+                            <strong class="edu-title">คอร์ส/อบรม</strong>
+                        </div>
+                        <p class="muted" style="margin:6px 0 0;">Essential SQL for Everyone</p>
+                    </article>
+
+                    <article class="edu-card">
+                        <div class="edu-top">
+                            <span class="edu-year chip">2022</span>
+                            <strong class="edu-title">คอร์ส/อบรม</strong>
+                        </div>
+                        <p class="muted" style="margin:6px 0 0;">โครงการเสริมสร้างประสบการณ์ และยกระดับทักษะ Big Data สำหรับเยาชน</p>
+                    </article>
+
+                    
+                </div>
+          </section>
+     </div>
+
+
+ <!-- certificate -->
+  <section class="about-card" style="margin-top:16px;">
+    <h3>ผลงาน และเกียรติบัตร</h3>
+    <p class="muted" style="margin:0 0 10px;">คลิกที่รูปเพื่อขยาย</p>
+
+    <div class="cert-grid" id="certGrid">
+        <div class="cert" role="button" tabindex="0" data-img="portfolio/cert1.png" data-cap="Certificate : Essential SQL for Everyone">
+            <div class="thumb"><img src="portfolio/cert1.png" alt="Certificate: Essential SQL for Everyone"></div>
+            <div class="cap">Certificate: Essential SQL for Everyone</div>
+        </div>
+
+         <div class="cert" role="button" tabindex="0" data-img="portfolio/cert2.png" data-cap="Certificate : Essential SQL for Everyone">
+            <div class="thumb"><img src="portfolio/cert2.png" alt="Certificate: Essential SQL for Everyone"></div>
+            <div class="cap">Certificate: โครงการเสริมสร้างประสบการณ์ และยกระดับทักษะ Big Data สำหรับเยาชน</div>
+        </div>
+    </div>
+  </section>
+   </section>
+
+   <!-- footer -->
+    <footer id="contact" class="site-footer">
+  <div class="footer-inner">
+    <h2>Contact</h2>
+    <p class="muted">ติดต่อได้ตามช่องทางด้านล่าง</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:your@email.com">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">your@email.com</div>
+      </a>
+
+      <a class="contact-card" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">yourprofile</div>
+      </a>
+
+      <a class="contact-card" href="https://github.com/yourusername" target="_blank" rel="noopener">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">yourusername</div>
+      </a>
+    </div>
+
+    <div class="footer-bottom muted">
+      © <span id="yearNow"></span> Your Name
+    </div>
+  </div>
+</footer>
+
+<!-- กดแล้ว Preview ภาพก่อน แล้วค่อยมีปุ่ม Download (Modal) -->
+<div class="doc-modal" id="docModal" aria-hidden="true">
+    <div class="doc-backdrop" data-close></div>
+
+    <div class="doc-dialog" role="dialog" aria-model="true" aria-labelledby="docTitle">
+        <div class="doc-head">
+            <div id="docTitle" class="doc-title">ตัวอย่างเอกสาร</div>
+            <button class="doc-close" type="button" data-close aria-label="Close">✕</button>
+        </div>
+
+        <div class="doc-body">
+            <img id="docPreview" alt="Document Preview">
+        </div>
+
+        <div class="doc-foot">
+            <a id="docDownload" class="doc-download" download>Download</a>
+        </div>
+    </div>
+</div>
+  
+
+
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <div class="lightbox-backdrop" data-close="1"></div>
@@ -286,21 +480,6 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 </div>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-backdrop" data-close="1"></div>
-  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button class="lightbox-close" type="button" aria-label="Close" data-close="1">✕</button>
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-</div>
-
-<script src="portfolio.js"></script>
-
-
-
 
 
 <a class="back-to-top" type="button" id="backToTop" aria-label="Back to top">
@@ -319,11 +498,6 @@
 <script src="main.js"></script>
 
 <script src="portfolio.js"></script>
-
-<!--มาใหม่รอเขียนใหม่ พน -->
-<!-- Lightbox -->
-
-
 
 </body>
 </html>
