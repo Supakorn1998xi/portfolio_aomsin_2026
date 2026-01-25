@@ -1047,21 +1047,40 @@
 
 /* Certificates grid (ใช้ของเดิมได้) */
 .cert-grid{
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
+
 .cert{
-  grid-column: span 4;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow:hidden;
-  background:#fff;
-  cursor:pointer;
+  flex: 0 0 calc((100% - 32px)/3);
+  scroll-snap-align: start;
 }
-.cert .thumb{ aspect-ratio: 4/3; background:#f3f4f6; }
-.cert img{ width:100%; height:100%; object-fit:cover; display:block; }
-.cert .cap{ padding: 10px 12px; font-size: 13px; border-top: 1px solid var(--border); }
+
+.cert .thumb{
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.cert .thumb img,
+.cert .thumb iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+}
+.cert-grid::-webkit-scrollbar{ height: 10px; }
+.cert-grid::-webkit-scrollbar-thumb{ background: #cfcfcf; border-radius: 999px; }
+
+
+
 
 /*footer*/
 .site-footer{
@@ -1361,6 +1380,8 @@ site-footer .footer-link{
 @media (max-width: 900px){
   .contact-inner{ grid-template-columns: 1fr; }
 }
+
+
 
 
 
