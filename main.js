@@ -174,22 +174,41 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn?.addEventListener("click", closePanel);
 });
 
-/* back to top */
+/* back to top  แก้ใหม่ 25/1/2026*/ 
 (() => {
   const btn = document.getElementById("backToTop");
+  const footer = document.getElementById("siteFooter");
   if (!btn) return;
+
+  const SHOW_AFTER = 300;
+
   const toggle = () => {
-    const show = window.scrollY > 300;
+    const show = window.scrollY > SHOW_AFTER;
     btn.classList.toggle("is-show", show);
   };
 
-  window.addEventListener("scroll", toggle, { passive: true});
+  window.addEventListener("scroll", toggle, { passive: true });
   toggle();
 
+  // ซ่อนเมื่อ footer เข้ามาใน viewport
+  if (footer && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        const inView = entries[0].isIntersecting;
+        btn.classList.toggle("is-hide", inView);
+      },
+      { root: null, threshold: 0.01 } // แค่แตะ footer ก็ซ่อน
+    );
+    io.observe(footer);
+  }
+
   btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavios: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
+
+
+
 
 /* amout me */
 // ===== About: Certificate Lightbox (reuse portfolio lightbox) =====
@@ -293,3 +312,119 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === 'Escape' && model.classList.contains('is-open')) closeModel();
   });
 })();
+
+// footer
+document.addEventListener("DOMContentLoaded", () => {
+  const yearEl = document.getElementById('yearNow');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  document.getElementById('reloadHome')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.reload();
+  });
+});
+
+
+// ===== Simple AI Chat (Rule-based) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const chatLog  = document.getElementById("chatLog");
+  const chatForm = document.getElementById("chatForm");
+  const chatText = document.getElementById("chatText");
+
+  // ถ้า element ไม่เจอ ให้เตือนใน console ชัดๆ
+  if (!chatLog || !chatForm || !chatText) {
+    console.error("Chat elements not found:", {
+      chatLog: !!chatLog,
+      chatForm: !!chatForm,
+      chatText: !!chatText
+    });
+    return;
+  }
+
+  const profile = {
+    name: "ศุภกร ซิ่งเถียรตระกูล (ออมสิน)",
+    address: "เขตบางแค กรุงเทพมหานคร",
+    phone: "+66812345678",
+    email: "supakorn@example.com",
+    skills: ["HTML, CSS, JavaScript", "Flutter", "PHP (Laravel, Zend)", "Node.js", "MySQL"],
+    portfolioHint: "ดูผลงานได้ในส่วน Portfolio ของหน้าเว็บนี้ครับ",
+  };
+
+  function addMsg(text, who = "bot") {
+    const el = document.createElement("div");
+    el.className = `msg ${who}`;
+    el.textContent = text;
+    chatLog.appendChild(el);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function botReply(qRaw) {
+    const q = (qRaw || "").trim().toLowerCase();
+    if (!q) return "พิมพ์คำถามได้เลยครับ 🙂";
+
+    if (q.includes("ชื่อ") || q.includes("name")) return `ฉันชื่อ ${profile.name} ครับ`;
+    if (q.includes("ติดต่อ") || q.includes("ช่องทาง")) {
+      return `ติดต่อได้ที่:\nโทร: ${profile.phone}\nอีเมล: ${profile.email}`;
+    }
+    if (q.includes("ทักษะ") || q.includes("ทำอะไรได้บ้าง")) {
+      return `ทักษะหลัก:\n- ${profile.skills.join("\n- ")}`;
+    }
+    if (q.includes("ที่อยู่") || q.includes("อยู่ที่ไหน")) return `ที่อยู่โดยประมาณ: ${profile.address}`;
+    if (q.includes("ผลงาน") || q.includes("portfolio")) return profile.portfolioHint;
+
+    return "ฉันตอบได้เรื่อง: ชื่อ, ทักษะ, ผลงาน, ช่องทางติดต่อ, ที่อยู่โดยประมาณ ลองพิมพ์ใหม่ได้ครับ";
+  }
+
+  // ข้อความเริ่มต้น
+  addMsg("สวัสดีครับ 👋 ต้องการถามอะไรเกี่ยวกับฉัน? (เช่น “ทักษะ”, “ติดต่อ”, “ผลงาน”)", "bot");
+
+  // ส่งข้อความ
+  chatForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = chatText.value;
+    addMsg(q, "user");
+    addMsg(botReply(q), "bot");
+    chatText.value = "";
+    chatText.focus();
+  });
+
+  // ชิปคำถาม (ใช้ event delegation กันปัญหาโหลด/ปุ่มเพิ่มทีหลัง)
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    const q = btn.dataset.q || "";
+    addMsg(q, "user");
+    addMsg(botReply(q), "bot");
+  });
+
+  console.log("Chat initialized ✅");
+});
+
+function scrollToBottom(smooth = true){
+  chatLog.scrollTo({
+    top: chatLog.scrollHeight,
+    behavior: smooth ? "smooth" : "auto"
+  });
+}
+
+function autoGrowChat(){
+  // ขยายความสูง chat-card ตามจำนวนข้อความ (นุ่มๆ) แต่ไม่เกิน max-height ที่ CSS กำหนด
+  const card = chatLog.closest(".chat-card");
+  if (!card) return;
+
+  card.style.transition = "max-height .25s ease";
+  // ให้ “ขยาย” ได้มากขึ้นเมื่อข้อความเพิ่ม (ปรับค่าได้)
+  card.style.maxHeight = "70vh";
+}
+
+function addMsg(text, who = "bot") {
+  const el = document.createElement("div");
+  el.className = `msg ${who}`;
+  el.textContent = text;
+  chatLog.appendChild(el);
+
+  autoGrowChat();
+
+  // รอให้ DOM วาดเสร็จ แล้วค่อย scroll
+  requestAnimationFrame(() => scrollToBottom(true));
+}

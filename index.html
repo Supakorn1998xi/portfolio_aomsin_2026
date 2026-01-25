@@ -344,28 +344,58 @@
     <!-- grid -->
      <div class="about-grid">
         <!-- personal -->
-         <section class="about-card">
-            <h3>ประวัติส่วนตัว</h3>
+       <section class="about-card">
+        <h3>ประวัติส่วนตัว</h3>
 
-            <div class="info-list">
-                <div class="info-item">
-                    <div class="info-label">จุดเด่น</div>
-                    <div class="info-body muted">วิเคราะห์ข้อมูล, ทำ dashboard, ทำ web app, automation</div>
+        <div class="info-list">
+            <!-- left layout -->
+             <div class="info-col">
+                <div class="info-raw">
+                    <div class="info-label">Name</div>
+                    <div class="info-body muted">ศุภกร ซิ่งเถียรตระกูล</div>
                 </div>
-            
 
-            <div class="info-item">
-                <div class="info-label">ด้านที่สนใจ</div>
-                <div class="info-body muted">BI, Data Modeling, Python, Cloud, AI, Web App </div>
+            <div class="info-row">
+                <div class="info-label">Nationality</div>
+                <div class="info-body muted">ไทย</div>
             </div>
 
-            <div class="info-item">
-                <div class="info-label">Tools/Stack</div>
-                <div class="info-body muted">SQL, Power BI, Looker Studio, Bug Query, Python, HTML/CSS/JS</div>
+            <div class="info-row">
+                <div class="info-label">Nick Name</div>
+                <div class="info-body muted">ออมสิน</div>
             </div>
-            </div>
-         </section>
 
+            <div class="info-row">
+                <div class="info-label">Address</div>
+                <div class="info-body muted">เขตบางแค กรุงเทพมหานคร</div>
+            </div>
+            </div>
+
+             <!-- ขวา (ใส่ข้อมูลเพิ่มตรงนี้) -->
+    <div class="info-col">
+      <div class="info-row">
+        <div class="info-label">Phone</div>
+        <div class="info-body muted">09x-xxx-xxxx</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Email</div>
+        <div class="info-body muted">you@email.com</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Birthdate</div>
+        <div class="info-body muted">xx/xx/xxxx</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Interest</div>
+        <div class="info-body muted">Web, Mobile, AWS</div>
+      </div>
+    </div>
+
+           
+       </section>
          <!-- Education -->
           <section class="about-card">
                 <h3>ประวัติการศึกษา</h3>
@@ -420,34 +450,97 @@
   </section>
    </section>
 
-   <!-- footer -->
-    <footer id="contact" class="site-footer">
-  <div class="footer-inner">
-    <h2>Contact</h2>
-    <p class="muted">ติดต่อได้ตามช่องทางด้านล่าง</p>
+   <!-- contact-->
+   <section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <!-- LEFT -->
+    <div class="contact-left">
+      <h2 class="contact-title">Contact</h2>
+      <p class="contact-sub">ช่องทางการติดต่อและสอบถามข้อมูลเพิ่มเติม</p>
 
-    <div class="contact-grid">
-      <a class="contact-card" href="mailto:your@email.com">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">your@email.com</div>
-      </a>
+      <div class="social-row">
+        <a class="icon-btn" href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
+          <!-- Facebook SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.8C10.5 7.3 12 6 14.3 6c1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12H16.5l-.5 3h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          <span>Facebook</span>
+        </a>
 
-      <a class="contact-card" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">yourprofile</div>
-      </a>
+        <a class="icon-btn" href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
+          <!-- Instagram SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5zM18 6.8a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 6.8z"/></svg>
+          <span>Instagram</span>
+        </a>
 
-      <a class="contact-card" href="https://github.com/yourusername" target="_blank" rel="noopener">
-        <div class="contact-label">GitHub</div>
-        <div class="contact-value">yourusername</div>
-      </a>
+        <a class="icon-btn" href="https://line.me/ti/p/~yourline" target="_blank" rel="noopener" aria-label="LINE">
+          <!-- LINE SVG (simple) -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 10.4c0-3.7-3.7-6.7-8.3-6.7S3 6.7 3 10.4c0 3.3 2.9 6 6.8 6.6.3.1.7.3.8.6l.2 1c0 .3.2 1.2 1.1.6.9-.6 4.7-3.1 6.4-5.3 1-1.2 1.3-2.3 1.3-4.1z"/></svg>
+          <span>LINE</span>
+        </a>
+      </div>
+
+      <div class="cta-row">
+        <a class="cta-btn" href="tel:+66812345678" aria-label="Call">
+          <span class="cta-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3 4.1 5.5 7.1 7.1l2.4-2.4c.3-.3.7-.4 1.1-.3 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.1 22 2 13.9 2 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          </span>
+          <div class="cta-text">
+            <div class="cta-title">โทร</div>
+            <div class="cta-sub">+66 81-234-5678</div>
+          </div>
+        </a>
+
+        <a class="cta-btn" href="mailto:supakorn@example.com" aria-label="Email">
+          <span class="cta-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+          </span>
+          <div class="cta-text">
+            <div class="cta-title">อีเมล</div>
+            <div class="cta-sub">supakorn@example.com</div>
+          </div>
+        </a>
+      </div>
+
+      <small class="contact-note">
+        * ปุ่มไอคอนและปุ่มข้อความสามารถกดได้ทั้งหมด
+      </small>
     </div>
 
-    <div class="footer-bottom muted">
-      © <span id="yearNow"></span> Your Name
+    <!-- RIGHT (CHAT) -->
+    <div class="contact-right">
+      <div class="chat-card" role="region" aria-label="AI Chat">
+        <div class="chat-head">
+          <div class="chat-title">AI Chat</div>
+          <div class="chat-sub">ถามข้อมูลเกี่ยวกับฉันได้เลย</div>
+        </div>
+
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+
+        <div class="chat-suggest">
+          <button class="chip" type="button" data-q="คุณชื่ออะไร">ชื่อ</button>
+          <button class="chip" type="button" data-q="ช่องทางการติดต่อ">ติดต่อ</button>
+          <button class="chip" type="button" data-q="คุณทำอะไรได้บ้าง">ทักษะ</button>
+          <button class="chip" type="button" data-q="ผลงานมีอะไรบ้าง">ผลงาน</button>
+        </div>
+
+        <form id="chatForm" class="chat-input" autocomplete="off">
+          <input id="chatText" type="text" placeholder="พิมพ์คำถาม เช่น “ทักษะของคุณคืออะไร”" />
+          <button type="submit" class="send-btn" aria-label="Send">ส่ง</button>
+        </form>
+      </div>
     </div>
   </div>
-</footer>
+</section>
+
+   <!-- footer -->
+  <footer id = "siteFooter" class="site-footer">
+    © <span id ="yearNow"></span>
+    <a href="/" class="footer-link" id="reloadHome">Supakorn.Singth</a>.
+    All right reserved.
+    <br>
+    <small class="footer-note">
+        เว็บไซต์นี้พัฒนาโดย ศุภกร ซิ่งเถียรตระกูล โดยใช้ ChatGPT เป็นผู้ช่วยในการเรียนรู้
+    </small>
+  </footer>
 
 <!-- กดแล้ว Preview ภาพก่อน แล้วค่อยมีปุ่ม Download (Modal) -->
 <div class="doc-modal" id="docModal" aria-hidden="true">
@@ -481,11 +574,12 @@
   </div>
 </div>
 
-
+<!-- back to top-->
 <a class="back-to-top" type="button" id="backToTop" aria-label="Back to top">
     <img src = "up-arrow_3809136.png">
 </a>
 
+<!-- lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <div class="lightbox-content">
     <button class="lightbox-close" data-close aria-label="Close">&times;</button>

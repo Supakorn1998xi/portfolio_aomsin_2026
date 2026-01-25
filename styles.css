@@ -741,25 +741,39 @@
 
 /* back to top */
 .back-to-top{
-    position: fixed;
-    left: 50%;
-    bottom: 18px;
-    transform: translateX(-50%);
-    z-index: 999;
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(8px); /* เพิ่ม translateY เพื่อทำอนิเมชัน */
+  z-index: 999;
 
-    padding: 10px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,.92);
-    cursor: pointer;
-    font: inherit;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.92);
+  cursor: pointer;
+  font: inherit;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,.08s);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08); /* ✅ แก้ .08s -> .08 */
 
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s ease, transform .2s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
 }
+
+/* โชว์ปุ่ม */
+.back-to-top.is-show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ซ่อนเมื่ออยู่ล่างสุด */
+.back-to-top.is-hide{
+  display: none !important;
+}
+
+
 
 /* show when scroll up */
 .back-to-top.is-show{
@@ -983,15 +997,37 @@
 .about-card h3{ margin: 0 0 10px; font-size: 18px; }
 
 /* Personal info list */
-.info-list{ display:grid; gap: 10px; }
-.info-item{
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 12px;
-  background: #fff;
+.info-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*left to right*/
+  gap: 24px;
+  align-items: start;
 }
-.info-label{ font-weight: 600; margin-bottom: 4px; }
-.info-body{ margin: 0; }
+
+.info-col{
+  display: grid;
+  gap: 14px; /* ระยะห่างระหว่างบรรทัด */
+}
+
+.info-row{
+  display: grid;
+  gap: 6px;
+}
+
+.info-label{
+  font-weight: 600;
+}
+
+.info-body.muted{
+  color: var(--muted);
+}
+
+/*จอเล็กให้เรียงล่างอัตโนมัติ*/
+@media (max-width: 720px){
+  .info-list{
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Education cards */
 .edu-list{ display:grid; gap: 10px; }
@@ -1028,46 +1064,30 @@
 .cert .cap{ padding: 10px 12px; font-size: 13px; border-top: 1px solid var(--border); }
 
 /*footer*/
-#contact{ scroll-margin-top: 90px; } /* ปรับตามความสูง header */
-
 .site-footer{
+  padding: 18px 16px;
   border-top: 1px solid var(--border);
-  background: #fff;
+  background: var(--bg);
+  color: var(--meted);
+  text-align: center;
+  font-size: 14px;
 }
 
-.footer-inner{
-  max-width: 1100px;   /* ถ้าคุณมี container อยู่แล้วใช้ของเดิมได้ */
-  margin: 0 auto;
-  padding: 26px 16px;
-  box-sizing: border-box;
-}
-
-.contact-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.contact-card{
-  display: block;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px;
-  text-decoration: none;
+site-footer .footer-link{
   color: inherit;
-  background: #fff;
-}
-
-.contact-label{
+  text-decoration: underline;
   font-weight: 600;
-  margin-bottom: 6px;
 }
 
-.footer-bottom{
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+.site-footer .footer-link:hover{
+  color: var(--text);
+}
+
+.footer-note{
+  display:inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
 }
 
 /* button doc review */
@@ -1154,6 +1174,195 @@
   font: inherit;
 }
 
+/* ===== Contact Section ===== */
+.contact-section{
+  padding: 36px 16px;
+}
+
+.contact-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-left, .contact-right{
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.contact-title{ margin: 0; font-size: 20px; }
+.contact-sub{ margin: 6px 0 14px; color: var(--muted); }
+
+.social-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.icon-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.icon-btn svg{
+  width: 18px; height: 18px;
+  fill: currentColor;
+}
+
+.icon-btn:hover{ border-color: #111; }
+
+.cta-row{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cta-btn{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.cta-btn:hover{ border-color: #111; }
+
+.cta-ico{
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+}
+
+.cta-ico svg{ width: 20px; height: 20px; fill: currentColor; }
+
+.cta-title{ font-weight: 700; line-height: 1.1; }
+.cta-sub{ color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.contact-note{ display:block; margin-top: 10px; color: var(--muted); }
+
+/* ===== Chat UI ===== */
+.chat-card{
+  display:flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 360px;
+  max-height: 70vh;         /* กันสูงเกินจอ */
+}
+
+.chat-head{
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-title{ font-weight: 800; }
+.chat-sub{ color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.chat-log{
+  flex: 1;
+  padding: 12px 0;
+  overflow: auto;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+
+  scroll-behavior: smooth;  /* เลื่อนนุ่มๆ */
+}
+
+/* ทำให้ส่วนขวา (กล่องแชท) ยืดสูงตามซ้ายได้ */
+.contact-right{
+  display: flex;
+}
+.chat-card{
+  width: 100%;
+}
+
+.msg{
+  max-width: 88%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  line-height: 1.35;
+}
+
+.msg.user{
+  align-self: flex-end;
+  border-color: #111;
+}
+
+.msg.bot{
+  align-self: flex-start;
+  background: #f7f7f7;
+}
+
+.chat-suggest{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 10px;
+  border-top: 1px solid var(--border);
+}
+
+.chip{
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 999px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+.chip:hover{ border-color:#111; }
+
+.chat-input{
+  display:flex;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+#chatText{
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  outline: none;
+}
+#chatText:focus{ border-color:#111; }
+
+.send-btn{
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (max-width: 900px){
+  .contact-inner{ grid-template-columns: 1fr; }
+}
+
+
 
 
 
@@ -1201,3 +1410,5 @@
   .proj-row{ flex-direction: column; align-items: stretch; }
   .proj-select{ width: 100%}
 }
+
+
