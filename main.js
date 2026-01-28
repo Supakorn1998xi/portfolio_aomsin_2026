@@ -98,6 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "เชื่อมต่อและเรียกใช้งาน API เพื่อดึงและแสดงผลข้อมูลบนหน้าเว็บหรือ Dashboard",
       ],
     },
+    script: {
+      title: "Google Script",
+      desc: "ทักษะการใช้ Google Apps Script สำหรับงานอัตโนมัติและจัดการข้อมูล",
+      bullets: [
+        "เขียนสคริปต์เพื่อทำงานอัตโนมัติบน Google Workspace เช่น Google Sheets และ Google Drive",
+        "จัดการข้อมูลใน Google Sheets ด้วย Script เพื่อคำนวณ แปลง และอัปเดตข้อมูล",
+        "เชื่อมต่อและเรียกใช้งาน API เพื่อดึงข้อมูลจากระบบภายนอกมาใช้งานและสร้าง Workflow อัตโนมัติ",
+      ],
+    },
     rappid: {
       title: "Rappid Minner",
       desc: "ทักษะการใช้ RapidMiner สำหรับงานวิเคราะห์ข้อมูลและเหมืองข้อมูล",
@@ -344,9 +353,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const profile = {
     name: "ศุภกร ซิ่งเถียรตระกูล (ออมสิน)",
     address: "เขตบางแค กรุงเทพมหานคร",
-    phone: "+66812345678",
-    email: "supakorn@example.com",
-    skills: ["HTML, CSS, JavaScript", "Flutter", "PHP (Laravel, Zend)", "Node.js", "MySQL"],
+    phone: "093-996-1677",
+    email: "supakorn0019@gmail.com",
+    skills: ["Power Bi , Looker Studio , Quick Sight","HTML, CSS, JavaScript", "MySQL , Big Query"],
     portfolioHint: "ดูผลงานได้ในส่วน Portfolio ของหน้าเว็บนี้ครับ",
   };
 
