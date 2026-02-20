@@ -297,6 +297,136 @@
          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
         },
       ]},
+
+      /*inventory management dashboard*/
+      {
+        projectId: "inv",
+          projectName: "Inventory Management Dashbaord",
+          projectNote: "Power BI /" + " Power Query /" + " Excel /"+ " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/1.1.jpg",
+              title: "Inventory Management Dashbaord (OPPO x AIS)",
+              badge: "Dashboard",
+              desc: "Dashbaord แสดงยอด DOI ของแต่ละคลังสินค้า",
+              bullets: [
+                "ยอดสินค้าคงเหลือ ของแต่ละคลัง , ยอด Sell Out , WOI , DOI , และบอกจำนวนที่ต้องเติมสินค้าเพื่อให้ได้ยอด WOI 4 Day ตาม Target ที่กำหนด",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/1.2.jpg",
+              title: "Inventory Management Dashbaord (OPPO x AIS)",
+              badge: "Dashboard",
+              desc: "Dashbaord แสดงยอด DOI ของแต่ละคลังสินค้า",
+              bullets: [
+                "ตารางแสดงรายการชื่อร้าน Dealer จำนวน RGM ที่มีอยู่ในแต่ละร้าน Area ของร้าน และจำนวนร้าน , ยอด Sell Out ของสัปดาห์ล่าสุด และค่าเฉลี่ย 4 สัปดาห์ล่าสุด , เทียบยอด Sell Out ปัจจุบันกับค่าเฉลี่ย 4 สัปดาด์ และ Stock ที่อยู่ปัจจุบัน และบอกจำนวนที่ควรเติมสินค้าให้ครบตาม Target และ สถานะ WOI แต่ละ Dealer",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+      ]},
+
+      {
+        projectId: "imei",
+          projectName: "AIS Sell out Performance",
+          projectNote: "Power BI /" + " Power Query /" + " Excel /"+ " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/2.1.jpg",
+              title: "AIS Sell out Performance Dashboard (OPPO x AIS)",
+              badge: "Dashboard",
+              desc: "Dashbaord แสดงภาพรวม และเปรียบเทียบตามช่วงเวลา แบ่งเป็นจำนวนที่ขายได้ กับยอดขายรวม",
+              bullets: [
+                "การแสดงยอด Sell Out ของ OPPO ที่มีขายกับร้าน AIS มีการเปรียบเทียบตามกลุ่มร้าน และแสดงยอดการเติบโต และเปรียบเทียบตามช่วงเวลาที่กำหนด",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/2.2.jpg",
+              title: "AIS Sell out Performance Dashboard (OPPO x AIS)",
+              badge: "Dashboard",
+              desc: "Dashbaord แสดงภาพรวม และเปรียบเทียบตามช่วงเวลา แบ่งเป็นจำนวนที่ขายได้ กับยอดขายรวม",
+              bullets: [
+                "แสดง %Share ของประเภทรุ่นที่มีการขาย และเปรียบเทียบกับช่วงเวลา และสรุป %ภาพรวม แบ่งตามกลุ่มของร้านที่กำหนด",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+      ]},
+      {
+        projectId: "predash",
+          projectName: "Web Present Dashboard",
+          projectNote: "Power BI /" + " Power Query /" + " Excel /"+ " Web Dashboard " ,
+          slides: [
+            {
+              img: "portfolio/2.3.jpg",
+              title: "Web Present Dashboard (OPPO x AIS)",
+              badge: "Web",
+              desc: "Web Present Dashbaord Power Bi",
+              bullets: [
+                "เว็บแสดงรายการ Dashbaord ที่สร้างจาก Power Bi Embed ที่เก็บรวบรวมและแบ่งหมวดหมู่ และหน้าดู Log สำหรับ Admin",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/2.4.jpg",
+              title: "Web Present Dashboard (OPPO x AIS)",
+              badge: "Web",
+              desc: "Web Present Dashbaord Power Bi",
+              bullets: [
+                "เว็บแสดงรายการ Dashbaord ที่สร้างจาก Power Bi Embed ที่เก็บรวบรวมและแบ่งหมวดหมู่ และหน้าดู Log สำหรับ Admin",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/2.5.jpg",
+              title: "Web Present Dashboard (OPPO x AIS)",
+              badge: "Web",
+              desc: "Web Present Dashbaord Power Bi",
+              bullets: [
+                "เว็บแสดงรายการ Dashbaord ที่สร้างจาก Power Bi Embed ที่เก็บรวบรวมและแบ่งหมวดหมู่ และหน้าดู Log สำหรับ Admin",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/2.6.jpg",
+              title: "Web Present Dashboard (OPPO x AIS)",
+              badge: "Web",
+              desc: "Web Present Dashbaord Power Bi",
+              bullets: [
+                "เว็บแสดงรายการ Dashbaord ที่สร้างจาก Power Bi Embed ที่เก็บรวบรวมและแบ่งหมวดหมู่ และหน้าดู Log สำหรับ Admin",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        {
+              img: "portfolio/2.7.jpg",
+              title: "Web Present Dashboard (OPPO x AIS)",
+              badge: "Web",
+              desc: "Web Present Dashbaord Power Bi",
+              bullets: [
+                "เว็บแสดงรายการ Dashbaord ที่สร้างจาก Power Bi Embed ที่เก็บรวบรวมและแบ่งหมวดหมู่ และหน้าดู Log สำหรับ Admin",
+                
+          ],
+          tags: ["Power BI", "Power Query", "Excel", "Web Dashboard"],
+          /*links: [{ label: "Detail", href: "#", icon: "📄" }]*/
+        },
+        
+      ]}
       
         
       ],
